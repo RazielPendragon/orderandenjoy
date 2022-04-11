@@ -32,8 +32,8 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => 'root',
+        'hostname' => 'orderandenjoy',
+        'username' => 'restaurante',
         'password' => '1qaz...',
         'database' => 'restaurantes',
         'DBDriver' => 'MySQLi',
