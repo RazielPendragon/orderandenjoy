@@ -1,4 +1,18 @@
 <?= $this->extend('/login/formausuario') ?>
 <?= $this->section('contenido') ?>
-NADA
+<?php if(isset($_SESSION['USR'])) {
+      
+      $usr =   $_SESSION['USR'];
+    ?>
+    <p>
+       // aqui abajo debe ir donde estara el formulario de menus
+        <a href="<?php echo site_url('/XXX/')?>">YYY</a>
+    </p>
+    <?php }else{ ?>
+    <p>
+        Favor ingrese.
+    </p>
+    <?php } ?>
+
+
 <?= $this->endSection() ?>
