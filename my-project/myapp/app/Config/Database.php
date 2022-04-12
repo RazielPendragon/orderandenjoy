@@ -32,7 +32,7 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'orderandenjoy',
+        'hostname' => 'orderandenjoy-mariadb-1',
         'username' => 'restaurante',
         'password' => '1qaz...',
         'database' => 'restaurantes',
