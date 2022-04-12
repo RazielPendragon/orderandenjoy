@@ -1,22 +1,22 @@
 <?php 
 namespace App\Models;
 use CodeIgniter\Model;
-use App\Entities\Concierto;
-class ConciertoModel extends Model
+use App\Entities\MenuEntity;
+class MenuModel extends Model
 {
-    protected $table = 'conciertos';
-    protected $primaryKey = 'concierto_id';
+    protected $table = 'Menu';
+    protected $primaryKey = 'menu_id';
     
-    protected $allowedFields = ['concierto_nombre', 'concierto_ubicacion'];
+    protected $allowedFields = ['menu_nombre', 'menu_descripcion', 'menu_precio'];
 
     // Tipo de dato a devolver
-    protected $returnType = 'App\Entities\Concierto'; 
+    protected $returnType = 'App\Entities\MenuEntity'; 
 
-    public function  eliminar(Concierto $unConcierto){
-        $this->delete($unConcierto->id);
+    public function  eliminar(MenuEntity $unMenu){
+        $this->delete($unMenu->id);
     }
 
-    public function actualziar (Concierto $unConcierto){
+    public function actualziar (MenuEntity $unMenu){
         /*
         // Escribiendo la consulta via "keys"
         $sql_update = "update conciertos set concierto_nombre = :nombre:, concierto_ubicacion= :ubicacion: where concierto_id =:id:";
@@ -52,23 +52,24 @@ class ConciertoModel extends Model
 
         // Abusando del framework porque estamos actualziando por llave priamria
         $parametros = [
-            'concierto_nombre' => $unConcierto->nombre,
-            'concierto_ubicacion' => $unConcierto->ubicacion            
+            'menu_nombre' => $unMenu->nombre,
+            'menu_descripcion' => $unMenu->descripcion,
+            'menu_precio' => $unMenu->precio,            
         ]
         ;
 
-        $this->update($unConcierto->id,$parametros);
+        $this->update($unMenu->id,$parametros);
     }
 
     public function todEs(){
-        return $this->orderBy('concierto_nombre', 'DESC')->findAll(); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
+        return $this->orderBy('menu_nombre', 'DESC')->findAll(); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
     }
 
     public function soloConA(){
         $b = $this->builder();
-        $b->like('concierto_nombre','A'); // esto es concierto_nombre like '%A%'
-        $b->orderBy('concierto_nombre', 'ASC');
+        $b->like('menu_nombre','A'); // esto es concierto_nombre like '%A%'
+        $b->orderBy('menu_nombre', 'ASC');
         $consulta = $b->get();
-        return $consulta->getCustomResultObject('App\Entities\Concierto');
+        return $consulta->getCustomResultObject('App\Entities\MenuEntity');
     }
 }

@@ -3,93 +3,95 @@ namespace App\Controllers;
 //
 use CodeIgniter\Controller;
 //
-use App\Models\ConciertoModel;
-use App\Entities\Concierto;
+use App\Models\MenuModel;
+use App\Entities\MenuEntity;
 //
-class ConciertoCrud extends Controller
+class MenuCrud extends Controller
 {
 public function index(){
-    // Obtenemos la clase del Model que controla los conciertos
-    $mod = new ConciertoModel();
-    // Buscamos los conciertos
-    $conciertos = $mod->todEs();
+    // Obtenemos la clase del Model que controla los Menús
+    $mod = new MenuModel();
+    // Buscamos los Menús
+    $menus = $mod->todEs();
     // UN EJEMPLO PARA MASA ADELANTE
-    //$conciertos = $mod->soloConA();
+    //$menus = $mod->soloConA();
     
     // Ponemos en la 'data transiente' la data que queremos mostrar
-    $data['registros'] = $conciertos;
+    $data['registros'] = $menus;
     // Vamos a la vista ... pero con los datos!!!
-    return view('concierto/lista',$data);
+    return view('MenuView/lista',$data);
 }
 
-private function recuperaConcierto($unId){
+private function recuperaMenu($unId){
     // Obtenemos la clase del Model que controla los conciertos
-    $mod = new ConciertoModel();
+    $mod = new MenuModel();
     // Buscamos el Concierto por la PK
-    $concierto = $mod->find($unId);
+    $menus = $mod->find($unId);
     // Dejamos el concierto la 'data transiente'
-    $laData['concierto'] = $concierto;
+    $laData['menu'] = $menus;
     return $laData;
 }
 
 public function ver($id){
     // 
-    $data = $this->recuperaConcierto($id);
+    $data = $this->recuperaMenu($id);
     //Vamos a la vista
-    return view('concierto/ver',$data);
+    return view('Menuview/ver',$data);
 }
 
 public function agregar01Formulario(){
-    return view('concierto/agregar01Formulario');
+    return view('Menuview/agregar01Formulario');
 }
 
 public function agregar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unConcierto = new Concierto();
-    $unConcierto->nombre =  $this->request->getVar('concierto');
-    $unConcierto->ubicacion =  $this->request->getVar('ubicacion');
+    $unMenu = new Menu();
+    $unMenu->nombre =  $this->request->getVar('menu');
+    $unMenu->descripcion =  $this->request->getVar('descripcion');
+    $unMenu->precio =  $this->request->getVar('precio');
     // Obtenemos la clase del Model que controla los conciertos
-    $mod = new ConciertoModel();
+    $mod = new MenuModel();
     // MAndamos la Transacciòn ala Base de DAtos
-    $mod->save($unConcierto);
+    $mod->save($unMenu);
     //
     return $this->index();
 }
 
 public function editar01Formulario($id){
-    $data = $this->recuperaConcierto($id);
+    $data = $this->recuperaMenu($id);
     //Vamos a la vista
-    return view('concierto/editar01Formulario',$data);
+    return view('MenuView/editar01Formulario',$data);
 }
 
 public function editar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unConcierto = new Concierto();
-    $unConcierto->id = $this->request->getVar('id');
-    $unConcierto->nombre =  $this->request->getVar('concierto');
-    $unConcierto->ubicacion =  $this->request->getVar('ubicacion');
+    $unMenu = new menu();
+    $unMenu->id = $this->request->getVar('id');
+    $unMenu->nombre =  $this->request->getVar('menu');
+    $unMenu->descripcion =  $this->request->getVar('descripcion');
+    $unMenu->precio =  $this->request->getVar('precio');
     // Obtenemos la clase del Model que controla los conciertos
-    $mod = new ConciertoModel();
+    $mod = new MenuModel();
     // Mandamos la Transacciòn ala Base de DAtos
-    $mod->actualziar($unConcierto);
+    $mod->actualziar($unMenu);
     // vuelve al inicio
    return $this->index();
 }
 
 public function eliminar01Formulario($id){
-    $data = $this->recuperaConcierto($id);
+    $data = $this->recuperaMenu($id);
     //Vamos a la vista
-    return view('concierto/eliminar',$data);
+    return view('MenuView/eliminar',$data);
 }
 
 public function eliminar02Continuar(){
      // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-     $unConcierto = new Concierto();
-     $unConcierto->id = $this->request->getVar('id');
+     $unMenu = new menu();
+     $unMenu->id = $this->request->getVar('id');
      // Obtenemos la clase del Model que controla los conciertos
-     $mod = new ConciertoModel();
+     $mod = new MenuModel();
      // Mandamos la Transacciòn ala Base de DAtos
-     $mod->eliminar($unConcierto);   
+     $mod->eliminar($unMenu);   
      //Home
      return $this->index();
  }
