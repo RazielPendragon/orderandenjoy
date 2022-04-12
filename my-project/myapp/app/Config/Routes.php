@@ -50,4 +50,4 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->get('listar', 'Platos::index');
+$routes->get('platos-listar', 'Platos::index');
