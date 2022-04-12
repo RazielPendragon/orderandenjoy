@@ -30,3 +30,11 @@ class UsuarioModel extends Model
         //return $this->orderBy('usuario_nombre_completo', 'DESC')->findAll(); 
         return $this->findAll();
      }
+     public function  unUsuario(Int $pk){
+        $unUsuario = $this->find($pk);
+        error_log(gettype($unUsuario));
+        return $unUsuario;
+    }
+
+}
+
