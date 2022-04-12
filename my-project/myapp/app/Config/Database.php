@@ -32,7 +32,7 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'orderandenjoy-mariadb-1',
+        'hostname' => 'orderandenjoy_mariadb_1',
         'username' => 'restaurante',
         'password' => '1qaz...',
         'database' => 'restaurantes',
@@ -47,7 +47,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     =>5306,
     ];
 
     /**
