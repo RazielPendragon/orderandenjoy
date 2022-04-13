@@ -1,3 +1,3 @@
 pmariadb-persistence/data/*
 my-project/myapp/app/Config/Database.php
-pmariadb-persistence/**
+/pmariadb-persistence/**
