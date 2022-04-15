@@ -2,19 +2,23 @@
 
 <?= $this->section('contenido') ?>
   <div class="container mt-5">
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/concierto-editar-continuar') ?>">
-    <input type="hidden" name="id" value="<?php echo($concierto->id);?>"/>
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/menu-editar-continuar') ?>">
+    <input type="hidden" name="id" value="<?php echo($menu->id);?>"/>
       <div class="form-group">
-        <label>Concierto</label>
-        <input type="text" name="concierto" class="form-control" value="<?php echo($concierto->nombre); ?>"/>
+        <label>Menu</label>
+        <input type="text" name="menu" class="form-control" value="<?php echo($menu->nombre); ?>"/>
       </div>
       <div class="form-group">
-        <label>Ubicación</label>
-        <input type="text" name="ubicacion" class="form-control" value="<?php echo($concierto->ubicacion);?>"/>
+        <label>Descripcion</label>
+        <input type="text" name="ubicacion" class="form-control" value="<?php echo($menu->descripcion);?>"/>
+      </div>
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="text" name="precio" class="form-control" value="<?php echo($menu->precio);?>"/>
       </div>
       <div class="form-group">
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
-      <a href="<?php echo site_url('/concierto-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/menu-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>
@@ -22,23 +26,31 @@
     if ($("#add_create").length > 0) {
       $("#add_create").validate({
         rules: {
-          concierto: {
+          menu: {
             required: true,
             maxlength: 100
           },
-          ubicacion: {
+          descripcion: {
             required: true,
             maxlength: 150
           },
+          precio: {
+            required: true,
+            maxlength: 100
+          },
         },
         messages: {
-          concierto: {
-            required: "El nombre del conciorto es obligatorio",
-            maxlength: "El nombe del concierto a lo más es de 100 caracteres.",
+          menu: {
+            required: "El nombre del Menú es obligatorio",
+            maxlength: "El nombe del Menú a lo más es de 100 caracteres.",
           },
-          ubicacion: {
-            required: "El nombre de la ubicación es obligatorio",
-            maxlength: "La ubcicación a lo más es de 150 caracteres.",
+          descripcion: {
+            required: "La Descripcion es obligatoria",
+            maxlength: "La Descripcion a lo más es de 150 caracteres.",
+          },
+          descripcion: {
+            required: "El precio es obligatorio",
+            maxlength: "El precio debe ser un entero positivo.",
           },
         },
       })
