@@ -5,8 +5,8 @@
       $usr =   $_SESSION['USR'];
     ?>
     <p>
-       Menus
-        <a href="<?php echo site_url('/XXX/')?>">YYY</a>
+       // aqui abajo debe ir donde estara el formulario de menus
+        <a href="<?php echo site_url('/MenuView-lista/')?>">Ver Menu</a>
     </p>
     <?php }else{ ?>
     <p>

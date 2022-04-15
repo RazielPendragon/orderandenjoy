@@ -3,7 +3,7 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex justify-content-end">
-        <a href="<?php echo site_url('/concierto-agregar') ?>" class="btn btn-success mb-2">Agegar Concierto</a>
+        <a href="<?php echo site_url('/menu-agregar') ?>" class="btn btn-success mb-2">Agegar Menú</a>
 	</div>
 
 <div class="mt-3">
@@ -11,8 +11,9 @@
        <thead>
           <tr>
              <th>ID</th>
-             <th>CONCIERTO</th>
-             <th>UBICACION</th>
+             <th>MENU</th>
+             <th>DESCRIPCION</th>
+             <th>PRECIO</th>
              <th>Action</th>
           </tr>
        </thead>
@@ -33,11 +34,12 @@
           <tr>
              <td><?php echo $reg->id; ?></td>
              <td><?php echo $reg->nombre; ?></td>
-             <td><?php echo $reg->ubicacion; ?></td>
+             <td><?php echo $reg->descripcion; ?></td>
+             <td><?php echo $reg->precio; ?></td>
              <td>
-              <a href="<?php echo site_url('/concierto-ver/'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
-              <a href="<?php echo site_url('/concierto-editar/'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/concierto-eliminar/'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/menu-ver/'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
+              <a href="<?php echo site_url('/menu-editar/'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
+              <a href="<?php echo site_url('/menu-eliminar/'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
               </td>
           </tr>
          <?php endforeach; ?>

@@ -15,7 +15,7 @@
 
 <?php
 	
-	$mySqli = mysqli_connect('tesis2021-22-mariadb-1', 'tesis', 't12345', 'bitnami_myapp'); 
+	$mySqli = mysqli_connect('orderandenjoy_mariadb_1', 'restaurante', '1qaz...', 'restaurantes'); 
 ?>
 
 </body>
