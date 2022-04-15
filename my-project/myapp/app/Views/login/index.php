@@ -6,7 +6,7 @@
     ?>
     <p>
        // aqui abajo debe ir donde estara el formulario de menus
-        <a href="<?php echo site_url('/XXX/')?>">YYY</a>
+        <a href="<?php echo site_url('/MenuView-lista/')?>">Ver Menu</a>
     </p>
     <?php }else{ ?>
     <p>
