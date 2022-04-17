@@ -68,7 +68,9 @@ $routes->add('login', 'LoginLogOutController::index');
 $routes->add('login-login', 'LoginLogOutController::login01Formulario');
 $routes->add('login-login01Validar/(:num)', 'LoginLogOutController::login02Validar/$1');
 $routes->add('login-logout', 'LoginLogOutController::logout');
-//
+//prueba de pantalla reservas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+$routes->add('reservas', 'ReservaController::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

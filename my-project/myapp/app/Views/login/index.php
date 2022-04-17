@@ -5,9 +5,14 @@
       $usr =   $_SESSION['USR'];
     ?>
     <p>
-       // aqui abajo debe ir donde estara el formulario de menus
+       Formularios de menus
         <a href="<?php echo site_url('/MenuView-lista/')?>">Ver Menu</a>
     </p>
+    <p>
+        Reservas del dia
+        <a href="<?php echo site_url('/reservas-verReservaMesas/')?>">Ver Reservas</a>
+    </p>
+    
     <?php }else{ ?>
     <p>
         Favor ingrese.
