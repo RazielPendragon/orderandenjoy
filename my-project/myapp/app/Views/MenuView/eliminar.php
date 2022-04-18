@@ -10,10 +10,10 @@
     <form method="post" id="add_create" name="add_create" action="<?= site_url('/menu-elimnar-continuar/') ?>">
 	  <input type="hidden" name="id" value="<?php echo($menu->id);?>"/>
       <div class="form-group">
-        <label>Concierto</label> <?php echo($menu->nombre); ?>
+        <label>Menu:</label> <?php echo($menu->nombre); ?>
       </div>
       <div class="form-group">
-        <label>Ubicación</label><?php echo($menu->ubicacion);?>
+        <label>Descripcion:</label><?php echo($menu->descripcion);?>
       </div>
       <div class="form-group">
       <button type="submit" class="btn btn-danger btn-sm">Borrar</button>

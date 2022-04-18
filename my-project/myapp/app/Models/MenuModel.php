@@ -7,7 +7,7 @@ class MenuModel extends Model
     protected $table = 'Menu';
     protected $primaryKey = 'menu_id';
     
-    protected $allowedFields = ['menu_nombre', 'menu_descripcion', 'menu_precio'];
+    protected $allowedFields = ['menu_nombre', 'menu_descripcion', 'menu_precio','id_usuarios'];
 
     // Tipo de dato a devolver
     protected $returnType = 'App\Entities\MenuEntity'; 
@@ -54,15 +54,16 @@ class MenuModel extends Model
         $parametros = [
             'menu_nombre' => $unMenu->nombre,
             'menu_descripcion' => $unMenu->descripcion,
-            'menu_precio' => $unMenu->precio,            
+            'menu_precio' => $unMenu->precio,
+            'id_usuarios' => $unMenu->restaurante,            
         ]
         ;
 
         $this->update($unMenu->id,$parametros);
     }
 
-    public function todEs(){
-        return $this->orderBy('menu_nombre', 'DESC')->findAll(); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
+    public function todEs($id){
+        return $this->where('id_usuarios',$id)->orderBy('menu_nombre', 'DESC')->findAll(); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
     }
 
     public function soloConA(){

@@ -46,7 +46,7 @@ $routes->post('base-elimnar-continuar', 'NavegarBaseController::eliminar02Contin
 // CRUD
 //
 //
-$routes->get('menu-lista', 'MenuCrud::index');
+$routes->get('menu-lista/(:num)', 'MenuCrud::index/$1');
 //
 $routes->get('menu-ver/(:num)', 'MenuCrud::ver/$1');
 //
@@ -61,7 +61,7 @@ $routes->post('menu-elimnar-continuar', 'MenuCrud::eliminar02Continuar');
 //
 $routes->add('menu-cancelar', 'MenuCrud::cancelar');
 //
-
+$routes->add('menu-volver/(:num)', 'LoginLogOutController::login02Validar/$1');
 // DEMO LOGIN
 //
 $routes->add('login', 'LoginLogOutController::index');

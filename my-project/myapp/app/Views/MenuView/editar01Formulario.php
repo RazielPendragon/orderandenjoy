@@ -48,7 +48,7 @@
             required: "La Descripcion es obligatoria",
             maxlength: "La Descripcion a lo más es de 150 caracteres.",
           },
-          descripcion: {
+          precio: {
             required: "El precio es obligatorio",
             maxlength: "El precio debe ser un entero positivo.",
           },

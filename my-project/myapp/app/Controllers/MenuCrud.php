@@ -8,11 +8,11 @@ use App\Entities\MenuEntity;
 //
 class MenuCrud extends Controller
 {
-public function index(){
+public function index($id){
     // Obtenemos la clase del Model que controla los Menús
     $mod = new MenuModel();
     // Buscamos los Menús
-    $menus = $mod->todEs();
+    $menus = $mod->todEs($id);
     // UN EJEMPLO PARA MASA ADELANTE
     //$menus = $mod->soloConA();
     
@@ -45,16 +45,18 @@ public function agregar01Formulario(){
 
 public function agregar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unMenu = new Menu();
+    $unMenu = new MenuEntity();
     $unMenu->nombre =  $this->request->getVar('menu');
     $unMenu->descripcion =  $this->request->getVar('descripcion');
     $unMenu->precio =  $this->request->getVar('precio');
+    $unMenu->restaurante =  $this->request->getVar('restaurante');
     // Obtenemos la clase del Model que controla los conciertos
     $mod = new MenuModel();
     // MAndamos la Transacciòn ala Base de DAtos
     $mod->save($unMenu);
     //
-    return $this->index();
+    session_start();
+    return $this->index($_SESSION ['USR']->usuario_id);
 }
 
 public function editar01Formulario($id){
@@ -65,17 +67,19 @@ public function editar01Formulario($id){
 
 public function editar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unMenu = new menu();
+    $unMenu = new MenuEntity();
     $unMenu->id = $this->request->getVar('id');
     $unMenu->nombre =  $this->request->getVar('menu');
     $unMenu->descripcion =  $this->request->getVar('descripcion');
     $unMenu->precio =  $this->request->getVar('precio');
+    $unMenu->restaurante =  $this->request->getVar('restaurante');
     // Obtenemos la clase del Model que controla los conciertos
     $mod = new MenuModel();
     // Mandamos la Transacciòn ala Base de DAtos
     $mod->actualziar($unMenu);
     // vuelve al inicio
-   return $this->index();
+    session_start();
+   return $this->index($_SESSION ['USR']->usuario_id);
 }
 
 public function eliminar01Formulario($id){
@@ -86,18 +90,20 @@ public function eliminar01Formulario($id){
 
 public function eliminar02Continuar(){
      // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-     $unMenu = new menu();
+     $unMenu = new MenuEntity();
      $unMenu->id = $this->request->getVar('id');
      // Obtenemos la clase del Model que controla los conciertos
      $mod = new MenuModel();
      // Mandamos la Transacciòn ala Base de DAtos
      $mod->eliminar($unMenu);   
      //Home
-     return $this->index();
+     session_start();
+     return $this->index($_SESSION ['USR']->usuario_id);
  }
 
  public function cancelar(){
-    return $this->index();
+    session_start();
+    return $this->index($_SESSION ['USR']->usuario_id);
  }
 
 }

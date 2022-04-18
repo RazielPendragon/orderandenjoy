@@ -4,7 +4,7 @@ namespace App\Entities;
 
 use CodeIgniter\Entity\Entity;
 
-class Menu extends Entity
+class MenuEntity extends Entity
 {
 
     protected $datamap = [
@@ -12,6 +12,7 @@ class Menu extends Entity
         "nombre" => "menu_nombre",
         "descripcion" => "menu_descripcion",
         "precio" => "menu_precio",
+        "restaurante" => "id_usuarios",
     ];
 
     protected $casts   = [];

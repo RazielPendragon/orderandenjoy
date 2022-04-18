@@ -6,7 +6,7 @@
     ?>
     <p>
        Formularios de menus
-        <a href="<?php echo site_url('/MenuView-lista/')?>">Ver Menu</a>
+        <a href="<?php echo site_url('/menu-lista/'.$usr->usuario_id)?>">Ver Menu</a>
     </p>
     <p>
         Reservas del dia
