@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
@@ -10,13 +11,14 @@
       </div>
       <div class="form-group">
         <label>Descripcion</label>
-        <input type="text" name="ubicacion" class="form-control" value="<?php echo($menu->descripcion);?>"/>
+        <input type="text" name="descripcion" class="form-control" value="<?php echo($menu->descripcion);?>"/>
       </div>
       <div class="form-group">
         <label>Precio</label>
         <input type="text" name="precio" class="form-control" value="<?php echo($menu->precio);?>"/>
       </div>
       <div class="form-group">
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->usuario_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
       <a href="<?php echo site_url('/menu-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
