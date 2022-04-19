@@ -16,7 +16,7 @@ class MesaModel extends Model
         $this->delete($unaMesa->id);
     }
 
-    public function actualziar (MesaEntity $unaMesa){
+    public function actualizar (MesaEntity $unaMesa){
         $parametros = [
             'n° mesa' => $$unaMesa->n° mesa,
             'estado_mesa' => $unaMesa->disponibilidad           
