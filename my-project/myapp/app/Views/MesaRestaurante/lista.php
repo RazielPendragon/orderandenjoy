@@ -9,7 +9,7 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/reservas-volver/'.$_SESSION ['USR']->usuario_id) ?>" class="btn btn-success mb-2">Reservas</a>
+        <a href="<?php echo site_url('/reservas-volver/'.$_SESSION ['USR']->usuario_id) ?>" class="btn btn-success mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/reservas-listar') ?>" class="btn btn-success mb-2">Listar</a>

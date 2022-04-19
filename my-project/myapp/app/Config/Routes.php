@@ -62,6 +62,7 @@ $routes->post('menu-elimnar-continuar', 'MenuCrud::eliminar02Continuar');
 $routes->add('menu-cancelar', 'MenuCrud::cancelar');
 //
 $routes->add('menu-volver/(:num)', 'LoginLogOutController::login02Validar/$1');
+$routes->add('reservas-volver/(:num)', 'LoginLogOutController::login02Validar/$1');
 // DEMO LOGIN
 //
 $routes->add('login', 'LoginLogOutController::index');

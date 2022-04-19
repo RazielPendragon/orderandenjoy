@@ -26,12 +26,12 @@ class MesaRestauranteController extends BaseController
 
     } 
 
-    public function agregarBaseDatos(){
+    //public function agregarBaseDatos(){
         // Mandar los datos a la BD
 
         //Mostrar la lista de mesa
-        return $this->lista();
-    }
+        //return $this->lista();
+    //}
 //en la lista habra un editar formulario
     public function editarFormulario()
     {
