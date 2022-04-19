@@ -9,7 +9,7 @@ class MesaEntity extends Entity
 
     protected $datamap = [
         "mesa" => "mesa_id",
-        "numero mesa" => "n° mesa",
+        "numero mesa" => "n_mesa",
         "estado mesa" => "estado_mesa",
         "capacidad mesa" => "capacidad_mesa",
         "restaurante" => "restautante_id",

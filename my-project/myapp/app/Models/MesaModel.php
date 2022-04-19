@@ -7,10 +7,10 @@ class MesaModel extends Model
     protected $table = 'Mesa';
     protected $primaryKey = ['mesa_id', 'dia_reserva'];
     
-    protected $allowedFields = ['mesa_id', 'n° mesa', 'estado_mesa', 'capacidad_mesa','restaurantes_id','dia_reserva']
+    protected $allowedFields = ['mesa_id', 'n_mesa', 'estado_mesa', 'capacidad_mesa','restaurantes_id','dia_reserva'];
 
     // Tipo de dato a devolver
-    protected $returnType = 'App\Entities\MesaEntity'; 
+    protected $returnType = 'App\Entities\MesaEntity';
 
     public function  eliminar(MesaEntity $unaMesa){
         $this->delete($unaMesa->id);
@@ -18,7 +18,7 @@ class MesaModel extends Model
 
     public function actualizar (MesaEntity $unaMesa){
         $parametros = [
-            'n° mesa' => $$unaMesa->n° mesa,
+            'n_mesa' => $$unaMesa->n_mesa,
             'estado_mesa' => $unaMesa->disponibilidad           
         ]
         ;

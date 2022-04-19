@@ -2,11 +2,23 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Controller;
+//
+use App\Models\MesaModel;
+use App\Entities\MesaEntity;
+
 class MesaRestauranteController extends BaseController
 {
     public function lista()
-    {
-        return view('MesaRestaurante/lista');
+    {   $mod = new MesaModel();
+        // Buscamos los Menús
+        $mesas = $mod->todos;
+        // UN EJEMPLO PARA MASA ADELANTE
+        //$menus = $mod->soloConA();
+        
+        // Ponemos en la 'data transiente' la data que queremos mostrar
+        $data['registros'] = $mesas;
+        return view('MesaRestaurante/lista', $data);
     }
 //en la lista habra un agregar formulario
     public function agregarFormulario(){
