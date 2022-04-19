@@ -4,15 +4,16 @@ namespace App\Entities;
 
 use CodeIgniter\Entity\Entity;
 
-class MenuEntity extends Entity
+class MesaEntity extends Entity
 {
 
     protected $datamap = [
-        "restaurante" => "restaurantes_id",
-        "Cod.mesa" => "mesa_id",
-        "n°mesa" => "n° mesa",
-        "capacidad" => "capacidad_mesa",
-        "disponibilidad" => "estado_mesa",
+        "mesa" => "mesa_id",
+        "numero mesa" => "n_mesa",
+        "estado mesa" => "estado_mesa",
+        "capacidad mesa" => "capacidad_mesa",
+        "restaurante" => "restautante_id",
+        "dia reserva" => "dia_reserva",
     ];
 
     protected $casts   = [];

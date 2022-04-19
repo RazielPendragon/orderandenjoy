@@ -68,8 +68,14 @@ $routes->add('login', 'LoginLogOutController::index');
 $routes->add('login-login', 'LoginLogOutController::login01Formulario');
 $routes->add('login-login01Validar/(:num)', 'LoginLogOutController::login02Validar/$1');
 $routes->add('login-logout', 'LoginLogOutController::logout');
-//prueba de pantalla reservas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-$routes->add('reservas', 'ReservaController::index');
+
+//Tren: MesaRestauranteController
+
+$routes->add('mesaRestaurante-lista','MesaRestauranteController::lista');
+$routes->add('mesaRestaurante-agregarFormulario','MesaRestauranteController::agregarFormulario');
+$routes->add('mesaRestaurante-agregarBaseDatos','MesaRestauranteController::agregarBaseDatos');
+$routes->add('mesaRestaurante-editarFormulario','MesaRestauranteController::editarFormulario');
+$routes->add('mesaRestaurante-editarBaseDato','MesaRestauranteController::editarBaseDato');
 
 /*
  * --------------------------------------------------------------------

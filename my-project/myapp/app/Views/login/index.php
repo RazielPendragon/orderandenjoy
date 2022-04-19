@@ -10,7 +10,7 @@
     </p>
     <p>
         Reservas del dia
-        <a href="<?php echo site_url('/reservas-verReservaMesas/')?>">Ver Reservas</a>
+        <a href="<?php echo site_url('/mesaRestaurante-lista/')?>">Ver Reservas</a>
     </p>
     
     <?php }else{ ?>

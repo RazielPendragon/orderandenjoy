@@ -1,9 +1,8 @@
-/* Table 'Mesa' */
-CREATE TABLE restaurantes.`Mesa`(
-  mesa_id INT(100),
-  `n° mesa` INT(100),
-  estado_mesa VARCHAR(100),
-  capacidad_mesa INT(20),
-  restaurantes_id INT NOT NULL,
-  PRIMARY KEY(mesa_id)
-) COMMENT 'Mesas';
+CREATE TABLE `Mesa` (
+  `mesa_id` int(100) NOT NULL,
+  `n_mesa` int(100) DEFAULT NULL,
+  `estado_mesa` varchar(100) DEFAULT NULL,
+  `capacidad_mesa` int(20) DEFAULT NULL,
+  `restaurantes_id` int(11) NOT NULL,
+  `dia_reserva` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Mesas';
