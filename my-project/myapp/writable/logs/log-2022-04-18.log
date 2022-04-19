@@ -1,0 +1,50 @@
+CRITICAL - 2022-04-18 19:44:38 --> Class "App\Models\ConciertoModel" not found
+#0 /app/myapp/system/CodeIgniter.php(832): App\Controllers\ConciertoCrud->index()
+#1 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-18 19:51:17 --> Class "App\Models\ConciertoModel" not found
+#0 /app/myapp/system/CodeIgniter.php(832): App\Controllers\ConciertoCrud->index()
+#1 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-18 21:16:15 --> syntax error, unexpected token ":"
+#0 /app/myapp/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt()
+#1 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-18 21:17:56 --> Invalid file: MesaRestaurante/lista.php
+#0 /app/myapp/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /app/myapp/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /app/myapp/app/Controllers/MesaRestauranteController.php(9): view()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\MesaRestauranteController->lista()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-18 21:24:39 --> mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /app/myapp/app/Views/base/lista.php(18): mysqli_connect()
+#2 /app/myapp/system/View/View.php(210): include('...')
+#3 /app/myapp/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 /app/myapp/system/Common.php(1089): CodeIgniter\View\View->render()
+#5 /app/myapp/app/Controllers/NavegarBaseController.php(8): view()
+#6 /app/myapp/system/CodeIgniter.php(832): App\Controllers\NavegarBaseController->index()
+#7 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#8 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#9 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-04-18 21:25:27 --> mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /app/myapp/app/Views/base/lista.php(18): mysqli_connect()
+#2 /app/myapp/system/View/View.php(210): include('...')
+#3 /app/myapp/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 /app/myapp/system/Common.php(1089): CodeIgniter\View\View->render()
+#5 /app/myapp/app/Controllers/NavegarBaseController.php(8): view()
+#6 /app/myapp/system/CodeIgniter.php(832): App\Controllers\NavegarBaseController->index()
+#7 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#8 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#9 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
