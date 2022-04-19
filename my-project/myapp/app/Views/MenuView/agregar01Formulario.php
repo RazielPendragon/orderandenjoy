@@ -17,7 +17,7 @@
         <input type="text" name="precio" class="form-control"/>
       </div>
       <div class="form-group">
-       <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->usuario_id?>"> 
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->usuario_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
       <a href="<?php echo site_url('/menu-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
