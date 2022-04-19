@@ -5,9 +5,9 @@ use App\Entities\MesaEntity;
 class MesaModel extends Model
 {
     protected $table = 'Mesa';
-    protected $primaryKey = 'mesa_id';
+    protected $primaryKey = ['mesa_id', 'dia_reserva'];
     
-    protected $allowedFields = ['mesa_id', 'n° mesa']
+    protected $allowedFields = ['mesa_id', 'n° mesa', 'estado_mesa', 'capacidad_mesa','restaurantes_id','dia_reserva']
 
     // Tipo de dato a devolver
     protected $returnType = 'App\Entities\MesaEntity'; 
