@@ -11,10 +11,10 @@ class MesaRestauranteController extends BaseController
 {
     public function lista()
     {   $mod = new MesaModel();
-        // Buscamos los Menús
-        $mesas = $mod->todos;
-        // UN EJEMPLO PARA MASA ADELANTE
-        //$menus = $mod->soloConA();
+        // Buscamos las mesas
+        $mesas = $mod->todos();
+        // UN EJEMPLO PARA MAS  ADELANTE
+        //$mesa = $mod->soloConA();
         
         // Ponemos en la 'data transiente' la data que queremos mostrar
         $data['registros'] = $mesas;
@@ -26,12 +26,12 @@ class MesaRestauranteController extends BaseController
 
     } 
 
-    //public function agregarBaseDatos(){
+    public function agregarBaseDatos(){
         // Mandar los datos a la BD
 
         //Mostrar la lista de mesa
-        //return $this->lista();
-    //}
+        return $this->lista();
+    }
 //en la lista habra un editar formulario
     public function editarFormulario()
     {
