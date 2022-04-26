@@ -9,48 +9,66 @@
     <input type="hidden" name="id" value="<?php echo($mesa->id);?>"/>
       <div class="form-group">
         <label>N° mesa</label>
-        <input type="text" name="mesa" class="form-control" value="<?php echo($mesa->nombre); ?>"/>
+        <input type="text" name="n_mesa" class="form-control" value="<?php echo($mesa->nombre_mesa); ?>"/>
       </div>
       <div class="form-group">
         <label>Estado mesa</label>
-        <input type="text" name="estado" class="form-control" value="<?php echo($mesa->estado);?>"/>
+        <input type="text" name="estado" class="form-control" value="<?php echo($mesa->estado_mesa);?>"/>
       </div>
       <div class="form-group">
         <label>Capacidad</label>
-        <input type="text" name="capacidad" class="form-control" value="<?php echo($mesa->capacidad);?>"/>
+        <input type="text" name="capacidad" class="form-control" value="<?php echo($mesa->capacidad_mesa);?>"/>
       </div>
       <div class="form-group">
         <label>Dia reserva</label>
-        <input type="text" name="reserva" class="form-control" value="<?php echo($mesa->reserva);?>"/>
+        <input type="text" name="dia_reserva" class="form-control" value="<?php echo($mesa->dia_reserva);?>"/>
       </div>
 
       <div class="form-group">
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->restaurante_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
-      <a href="<?php echo site_url('/concierto-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>
   <script>
-    if ($("#add_create").length > 0) {
+
+if ($("#add_create").length > 0) {
       $("#add_create").validate({
         rules: {
-          concierto: {
+          n_mesa: {
             required: true,
             maxlength: 100
           },
-          ubicacion: {
+          estado: {
+            required: true,
+            maxlength: 150
+          },
+          capacidad: {
+            required: true,
+            maxlength: 150
+          },
+          dia_reserva: {
             required: true,
             maxlength: 150
           },
         },
         messages: {
-          concierto: {
-            required: "El nombre del conciorto es obligatorio",
-            maxlength: "El nombe del concierto a lo más es de 100 caracteres.",
+          n_mesa: {
+            required: "El numero de la mesa es obligatorio",
+            maxlength: "El numero de la mesa a lo más es de 100 caracteres.",
           },
-          ubicacion: {
-            required: "El nombre de la ubicación es obligatorio",
-            maxlength: "La ubcicación a lo más es de 150 caracteres.",
+          estado: {
+            required: "El estado de la mesa es obligatorio",
+            maxlength: "El estado de la mesa a lo más es de 150 caracteres.",
+          },
+          capacidad: {
+            required: "La capacidad de la mesa es obligatorio",
+            maxlength: "La capacidad de la mesa debe ser entero positivo.",
+          },
+          dia_reserva: {
+            required: "El dia de la reserva es obligatorio",
+            maxlength: "El dia de la reserva debe ser entero positivo.",
           },
         },
       })

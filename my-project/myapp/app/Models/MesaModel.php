@@ -19,7 +19,11 @@ class MesaModel extends Model
     public function actualizar (MesaEntity $unMesa){
         $parametros = [
             'n_mesa' => $$unMesa->n_mesa,
-            'estado_mesa' => $unMesa->disponibilidad           
+            'estado_mesa' => $unMesa->estado_mesa,
+            'capacidad_mesa' => $unMesa->capacidad_mesa,
+            'dia_reserva' => $unMesa->dia_reserva,
+            'restaurante_id' => $unMesa->restaurante,
+
         ]
         ;
 
@@ -27,13 +31,15 @@ class MesaModel extends Model
     }
 
     public function todos(){
-        //return $this->orderBy('n° mesa', 'DESC')->findAll(
-        return $this->findAll();
-     }
-     public function  unMesa(Int $pk){
-        $unUsuario = $this->find($pk);
-        error_log(gettype($unMesa));
-        return $unMesa;
+        return $this->where('restaurantes_id',$id)->orderBy('n_mesa', 'DESC')->findAll(); 
+    }
+    public function soloConA(){
+        $b = $this->builder();
+        $b->like('n_mesa','A'); // esto es concierto_nombre like '%A%'
+        $b->orderBy('n_mesa', 'ASC');
+        $consulta = $b->get();
+        return $consulta->getCustomResultObject('App\Entities\MesaEntity');
     }
 
 }
+

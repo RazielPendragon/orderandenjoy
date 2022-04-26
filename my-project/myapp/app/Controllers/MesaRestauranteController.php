@@ -38,7 +38,7 @@ class MesaRestauranteController extends Controller
     public function agregarBaseDatos(){
         // Mandar los datos a la BD
         $unMesa = new MesaEntity();
-        $unMesa->numero_mesa=  $this->request->getVar('n_mesa');
+        $unMesa->nombre_mesa=  $this->request->getVar('mesa');
         $unMesa->estado_mesa =  $this->request->getVar('estado');
         $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
         $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
@@ -63,16 +63,39 @@ class MesaRestauranteController extends Controller
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
     $unMesa = new MesaEntity();
     $unMesa->mesa= $this->request->getVar('id');
-    $unMesa->numero_mesa =  $this->request->getVar('menu');
-    $unMesa->estado_mesa =  $this->request->getVar('descripcion');
-    $unMesa->capacidad_mesa=  $this->request->getVar('precio');
-    $unMesa->dia_reserva =  $this->request->getVar('restaurante');
+    $unMesa->nombre_mesa =  $this->request->getVar('mesa');
+    $unMesa->estado_mesa =  $this->request->getVar('estado');
+    $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
+    $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
     $unMesa->restaurante =  $this->request->getVar('restaurante');
     // Obtenemos la clase del Model que controla los conciertos
     $mod = new MesaModel();
     // Mandamos la Transacciòn ala Base de DAtos
-    $mod->actualizar($unaMenu);
+    $mod->actualizar($unMesa);
     // vuelve al inicio
         return $this->lista();
     } 
+
+    public function eliminarFormulario($id){
+        $data = $this->recuperaMesa($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/eliminarFormulario',$data);
+    }
+    
+    public function eliminarContinuar(){
+         // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+         $unMesa= new MesaEntity();
+         $unMesa->id = $this->request->getVar('id');
+         // Obtenemos la clase del Model que controla los conciertos
+         $mod = new MesaModel();
+         // Mandamos la Transacciòn ala Base de DAtos
+         $mod->eliminar($unMesa);   
+         //Home
+         return $this->lista();
+     }
+    
+     public function cancelar(){
+        return $this->lista();
+     }
+    
 }

@@ -37,7 +37,7 @@
     if ($("#add_create").length > 0) {
       $("#add_create").validate({
         rules: {
-          n° mesa: {
+          n_mesa: {
             required: true,
             maxlength: 100
           },
@@ -49,7 +49,7 @@
             required: true,
             maxlength: 150
           },
-          dia reserva: {
+          dia_reserva: {
             required: true,
             maxlength: 150
           },

@@ -1,4 +1,5 @@
 <?php 
+//
 namespace App\Controllers;
 //
 use CodeIgniter\Controller;
@@ -8,7 +9,7 @@ use App\Entities\MenuEntity;
 //
 class MenuCrud extends Controller
 {
-public function index(){
+    public function index(){
     // Obtenemos la clase del Model que controla los Menús
     session_start();
     $usr= $_SESSION['USR'];
