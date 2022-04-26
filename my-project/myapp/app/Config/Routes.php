@@ -75,11 +75,18 @@ $routes->add('login-logout', 'LoginLogOutController::logout');
 $routes->get('mesaRestaurante-lista','MesaRestauranteController::lista');
 //
 $routes->add('mesaRestaurante-agregarFormulario','MesaRestauranteController::agregarFormulario');
-$routes->post('menuRestaurante-agregarBaseDatos-continuar', 'MesaRestauranteController::agregarBaseDatos');
-
+$routes->post('mesaRestaurante-agregarBaseDatos-continuar', 'MesaRestauranteController::agregarBaseDatos');
 //
 $routes->add('mesaRestaurante-editarFormulario','MesaRestauranteController::editarFormulario');
 $routes->add('mesaRestaurante-editarBaseDato','MesaRestauranteController::editarBaseDato');
+//
+$routes->add('mesaRestaurante-editarFormulario', 'MesaRestauranteController::editarFormulario');
+$routes->post('mesaRestaurante-editarContinuar-continuar', 'MesaRestauranteController::editarContinuar');
+//
+$routes->get('mesaRestaurante-eliminarFormulario', '::MesaRestauranteController::eliminarFormulario');
+$routes->post('mesaRestaurante-eliminarContinuar-continuar', 'MesaRestauranteController::eliminarContinuar');
+//
+$routes->add('mesaRestaurante-cancelar', 'MesaRestauranteController::cancelar');
 
 /*
  * --------------------------------------------------------------------

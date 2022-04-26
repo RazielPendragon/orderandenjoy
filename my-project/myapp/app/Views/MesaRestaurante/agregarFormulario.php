@@ -1,13 +1,14 @@
-estoy agregando 
 
+<!-- estoy agregando 
 <a href="<?php echo site_url('/mesaRestaurante-agragarBaseDatos/')?>">Agregar</a>
-
 <?php session_start(); ?>
+-->
+
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
   <div class="container mt-5">
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/menuRestaurante-agregarBaseDatos-continuar') ?>">
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-agregarBaseDatos-continuar') ?>">
       <div class="form-group">
         <label>N° mesa</label>
         <input type="text" name="n° mesa" class="form-control"/>
