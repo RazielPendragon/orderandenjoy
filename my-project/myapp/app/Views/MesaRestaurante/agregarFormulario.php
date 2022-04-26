@@ -11,7 +11,7 @@
     <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-agregarBaseDatos-continuar') ?>">
       <div class="form-group">
         <label>N° mesa</label>
-        <input type="text" name="n° mesa" class="form-control"/>
+        <input type="text" name="n_mesa" class="form-control"/>
       </div>
       <div class="form-group">
         <label>Estado mesa</label>
@@ -23,11 +23,11 @@
       </div>
       <div class="form-group">
         <label>Dia reserva</label>
-        <input type="text" name="dia reserva" class="form-control"/>
+        <input type="text" name="dia_reserva" class="form-control"/>
       </div>
-      <!--arreglar direcciones de botones-->
+      
       <div class="form-group">
-      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->usuario_id?>"> 
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->restaurante_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
       <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>

@@ -9,8 +9,8 @@ use App\Entities\MesaEntity;
 
 class MesaRestauranteController extends Controller
 {
-    public function lista()
-    {   $mod = new MesaModel();
+    public function lista(){
+       $mod = new MesaModel();
         // Buscamos las mesas
         $mesas = $mod->todos();
         // UN EJEMPLO PARA MAS  ADELANTE
@@ -20,28 +20,59 @@ class MesaRestauranteController extends Controller
         $data['registros'] = $mesas;
         return view('MesaRestaurante/lista', $data);
     }
-//en la lista habra un agregar formulario
+    private function recuperaMesa($unId){
+        // Obtenemos la clase del Model que controla las mesas
+        $mod = new MesaModel();
+        // Buscamos las mesas por la PK
+        $mesas = $mod->find($unId);
+        // Dejamos las mesas la 'data transiente'
+        $laData['mesa'] = $mesas;
+        return $laData;
+    }
+
+    //en la lista habra un agregar formulario
     public function agregarFormulario(){
         return view('MesaRestaurante/agregarFormulario');
 
     } 
     public function agregarBaseDatos(){
         // Mandar los datos a la BD
-
+        $unMesa = new MesaEntity();
+        $unMesa->numero_mesa=  $this->request->getVar('n_mesa');
+        $unMesa->estado_mesa =  $this->request->getVar('estado');
+        $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
+        $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
+        $unMesa->restaurante =  $this->request->getVar('restaurante');
+        //
+        $mod = new MesaModel();
+        //
+        $mod->save($unMesa);
         //Mostrar la lista de mesa
+
         return $this->lista();
+        //return $this->index();
     }
 //en la lista habra un editar formulario
-    public function editarFormulario()
-    {
-        return view('MesaRestaurante/editarFormulario');
+    public function editarFormulario($id){
+        $data = $this->recuperaMesa($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/editarFormulario',$data);
     }
 //en la lista habra opcion de editar capacidad
-    public function editarBaseDato()
-    {
+    public function editarBaseDatos(){
+    // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+    $unMesa = new MesaEntity();
+    $unMesa->mesa= $this->request->getVar('id');
+    $unMesa->numero_mesa =  $this->request->getVar('menu');
+    $unMesa->estado_mesa =  $this->request->getVar('descripcion');
+    $unMesa->capacidad_mesa=  $this->request->getVar('precio');
+    $unMesa->dia_reserva =  $this->request->getVar('restaurante');
+    $unMesa->restaurante =  $this->request->getVar('restaurante');
+    // Obtenemos la clase del Model que controla los conciertos
+    $mod = new MesaModel();
+    // Mandamos la Transacciòn ala Base de DAtos
+    $mod->actualizar($unaMenu);
+    // vuelve al inicio
         return $this->lista();
     } 
-    
-
-    
 }

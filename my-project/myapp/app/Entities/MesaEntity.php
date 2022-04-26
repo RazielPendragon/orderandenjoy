@@ -9,11 +9,11 @@ class MesaEntity extends Entity
 
     protected $datamap = [
         "mesa" => "mesa_id",
-        "numero mesa" => "n_mesa",
-        "estado mesa" => "estado_mesa",
-        "capacidad mesa" => "capacidad_mesa",
+        "nombre_mesa" => "n_mesa",
+        "estado_mesa" => "estado_mesa",
+        "capacidad_mesa" => "capacidad_mesa",
+        "dia_reserva" => "dia_reserva",
         "restaurante" => "restautante_id",
-        "dia reserva" => "dia_reserva",
     ];
 
     protected $casts   = [];

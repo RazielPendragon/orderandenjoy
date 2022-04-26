@@ -25,6 +25,7 @@
              <th>CAPACIDAD</th>
             <!-- <th>RESTAURANTE</th> (no ocupar por ahora)-->
              <th>DIA RESERVA</th>
+             <th>ACCION</th>
           </tr>
        </thead>
        <tbody>
@@ -48,14 +49,14 @@
              <td><?php echo $reg->capacidad_mesa; ?></td>
              <!--<td><?php echo $reg->restaurante_id; ?></td> (no ocupar por ahora)-->
              <td><?php echo $reg->dia_reserva; ?></td>
-            <!-- <td>
-            <!--  <a href="<?php echo site_url('/menu-ver/'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
+             <td>
+              <a href="<?php echo site_url('/menu-ver/'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
               <a href="<?php echo site_url('/menu-editar/'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
               <a href="<?php echo site_url('/menu-eliminar/'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
               </td>
       
           </tr>
-          --> 
+        
          <?php endforeach; ?>
          <?php endif; ?>
        </tbody>

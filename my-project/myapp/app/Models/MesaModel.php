@@ -7,33 +7,33 @@ class MesaModel extends Model
     protected $table = 'Mesa';
     protected $primaryKey = ['mesa_id', 'dia_reserva'];
     
-    protected $allowedFields = ['mesa_id', 'n_mesa', 'estado_mesa', 'capacidad_mesa','restaurantes_id','dia_reserva'];
+    protected $allowedFields = ['mesa_id', 'n_mesa', 'estado_mesa', 'capacidad_mesa','dia_reserva','restaurantes_id'];
 
     // Tipo de dato a devolver
     protected $returnType = 'App\Entities\MesaEntity';
 
-    public function  eliminar(MesaEntity $unaMesa){
-        $this->delete($unaMesa->id);
+    public function  eliminar(MesaEntity $unMesa){
+        $this->delete($unMesa->id);
     }
 
-    public function actualizar (MesaEntity $unaMesa){
+    public function actualizar (MesaEntity $unMesa){
         $parametros = [
-            'n_mesa' => $$unaMesa->n_mesa,
-            'estado_mesa' => $unaMesa->disponibilidad           
+            'n_mesa' => $$unMesa->n_mesa,
+            'estado_mesa' => $unMesa->disponibilidad           
         ]
         ;
 
-        $this->update($unaMesa->id,$parametros);
+        $this->update($unMesa->id,$parametros);
     }
 
     public function todos(){
         //return $this->orderBy('n° mesa', 'DESC')->findAll(
         return $this->findAll();
      }
-     public function  unaMesa(Int $pk){
+     public function  unMesa(Int $pk){
         $unUsuario = $this->find($pk);
-        error_log(gettype($unaMesa));
-        return $unaMesa;
+        error_log(gettype($unMesa));
+        return $unMesa;
     }
 
 }
