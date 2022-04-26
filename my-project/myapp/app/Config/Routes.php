@@ -72,9 +72,12 @@ $routes->add('login-logout', 'LoginLogOutController::logout');
 
 //Tren: MesaRestauranteController
 
-$routes->add('mesaRestaurante-lista','MesaRestauranteController::lista');
+$routes->get('mesaRestaurante-lista','MesaRestauranteController::lista');
+//
 $routes->add('mesaRestaurante-agregarFormulario','MesaRestauranteController::agregarFormulario');
-$routes->add('mesaRestaurante-agregarBaseDatos','MesaRestauranteController::agregarBaseDatos');
+$routes->post('menuRestaurante-agregarBaseDatos-continuar', 'MesaRestauranteController::agregarBaseDatos');
+
+//
 $routes->add('mesaRestaurante-editarFormulario','MesaRestauranteController::editarFormulario');
 $routes->add('mesaRestaurante-editarBaseDato','MesaRestauranteController::editarBaseDato');
 

@@ -1,13 +1,13 @@
 estoy agregando 
 
-<a href="<?php echo site_url('/mesaRestaurante-agregarBaseDatos/')?>">Agregar</a>
+<a href="<?php echo site_url('/mesaRestaurante-agragarBaseDatos/')?>">Agregar</a>
 
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
   <div class="container mt-5">
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/menu-agregar-continuar') ?>">
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/menuRestaurante-agregarBaseDatos-continuar') ?>">
       <div class="form-group">
         <label>N° mesa</label>
         <input type="text" name="n° mesa" class="form-control"/>
@@ -28,7 +28,7 @@ estoy agregando
       <div class="form-group">
       <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->usuario_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
-      <a href="<?php echo site_url('/menu-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>

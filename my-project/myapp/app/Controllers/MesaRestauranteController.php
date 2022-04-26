@@ -7,7 +7,7 @@ use CodeIgniter\Controller;
 use App\Models\MesaModel;
 use App\Entities\MesaEntity;
 
-class MesaRestauranteController extends BaseController
+class MesaRestauranteController extends Controller
 {
     public function lista()
     {   $mod = new MesaModel();
@@ -25,7 +25,6 @@ class MesaRestauranteController extends BaseController
         return view('MesaRestaurante/agregarFormulario');
 
     } 
-
     public function agregarBaseDatos(){
         // Mandar los datos a la BD
 
@@ -41,7 +40,8 @@ class MesaRestauranteController extends BaseController
     public function editarBaseDato()
     {
         return $this->lista();
-    }
+    } 
+    
 
     
 }
