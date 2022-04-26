@@ -8,11 +8,13 @@ use App\Entities\MenuEntity;
 //
 class MenuCrud extends Controller
 {
-public function index($id){
+public function index(){
     // Obtenemos la clase del Model que controla los Menús
+    session_start();
+    $usr= $_SESSION['USR'];
     $mod = new MenuModel();
     // Buscamos los Menús
-    $menus = $mod->todEs($id);
+    $menus = $mod->todEs($usr->usuario_id);
     // UN EJEMPLO PARA MASA ADELANTE
     //$menus = $mod->soloConA();
     
@@ -55,8 +57,7 @@ public function agregar02Continuar(){
     // MAndamos la Transacciòn ala Base de DAtos
     $mod->save($unMenu);
     //
-    session_start();
-    return $this->index($_SESSION ['USR']->usuario_id);
+    return $this->index();
 }
 
 public function editar01Formulario($id){
@@ -78,8 +79,7 @@ public function editar02Continuar(){
     // Mandamos la Transacciòn ala Base de DAtos
     $mod->actualziar($unMenu);
     // vuelve al inicio
-    session_start();
-   return $this->index($_SESSION ['USR']->usuario_id);
+   return $this->index();
 }
 
 public function eliminar01Formulario($id){
@@ -97,13 +97,11 @@ public function eliminar02Continuar(){
      // Mandamos la Transacciòn ala Base de DAtos
      $mod->eliminar($unMenu);   
      //Home
-     session_start();
-     return $this->index($_SESSION ['USR']->usuario_id);
+     return $this->index();
  }
 
  public function cancelar(){
-    session_start();
-    return $this->index($_SESSION ['USR']->usuario_id);
+    return $this->index();
  }
 
 }

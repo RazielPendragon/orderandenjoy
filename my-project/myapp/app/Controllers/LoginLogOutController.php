@@ -23,8 +23,9 @@ class LoginLogOutController extends BaseController
         return view('login/login01Formulario',$data);
     }
 
-    public function login02Validar($pk)
+    public function login02Validar()
     {
+        $pk=$_POST['pk'];
         // Como swbe funcioanr
         // ** Recueprar los datos 
         // ** Buscar el usr en la bd (existe?)
@@ -42,6 +43,11 @@ class LoginLogOutController extends BaseController
         session_start();
         $_SESSION['USR']= $usuario;
         // Pal Home!!!
+        return $this->index();
+    }
+    public function volver()
+    {
+        session_start();
         return $this->index();
     }
 

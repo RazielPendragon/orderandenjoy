@@ -3,13 +3,14 @@
 <div class="mt-3">
     <ul>
           <?php if($registros): ?>
-          <?php foreach($registros as $reg): ?>
-            <li>
-                <a href="<?php echo site_url('/login-login01Validar/'.$reg->id);?>">
-                    <?php echo $reg->nombre_completo; ?>
-                </a>    
-            </li>     
-         <?php endforeach; ?>
+            <form action="/login-login01Validar/" method="POST">
+            <select name="pk">
+            <?php foreach($registros as $reg): ?>
+            <option value="<?= $reg->usuario_id ?>"><?= $reg->usuario_nombre_completo ?></option>
+            <?php endforeach; ?>
+            </select>
+            <input type='submit' value='login'/>
+            </form>   
          <?php endif; ?>
     </ul>
   </div>
