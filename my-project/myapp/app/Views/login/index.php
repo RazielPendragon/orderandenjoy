@@ -4,15 +4,15 @@
       
       $usr =   $_SESSION['USR'];
     ?>
-    <p>
-       Formularios de menus
-        <a href="<?php echo site_url('/menu-lista/')?>">Ver Menu</a>
-    </p>
-    <p>
-        Reservas del dia
-        <a href="<?php echo site_url('/mesaRestaurante-lista/')?>">Ver Reservas</a>
-    </p>
-    
+    <h1>Restaurantes</h1>
+    <ul>
+        <li> <a href="<?php echo site_url('/menu-lista/')?>">Ver Menu</a></li>
+        <li><a href="<?php echo site_url('/mesaRestaurante-lista/')?>">Ver Reservas</a></li>
+    </ul>
+    <h1>Comensales</h1>
+    <ul>
+        <li>Reservar mesa</li>
+    </ul>
     <?php }else{ ?>
     <p>
         Favor ingrese.

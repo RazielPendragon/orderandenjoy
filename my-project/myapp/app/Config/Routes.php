@@ -72,6 +72,11 @@ $routes->add('login-logout', 'LoginLogOutController::logout');
 
 //Tren: MesaRestauranteController
 
+$routes->add('login', 'LoginLogOutController::index');
+$routes->add('login-login', 'LoginLogOutController::login01Formulario');
+$routes->add('login-login01Validar', 'LoginLogOutController::login02Validar');
+$routes->add('login-logout', 'LoginLogOutController::logout');
+
 $routes->get('mesaRestaurante-lista','MesaRestauranteController::lista');
 //
 $routes->add('mesaRestaurante-agregarFormulario','MesaRestauranteController::agregarFormulario');
