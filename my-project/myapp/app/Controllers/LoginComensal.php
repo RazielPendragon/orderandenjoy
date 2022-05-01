@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\UsuarioModel;
+use App\Models\RegistroComensalModel;
 
 class LoginLogOutController extends BaseController
 {
@@ -17,7 +17,7 @@ class LoginLogOutController extends BaseController
 
         // Por mientras
         // ** Lista de usaurios desde la BD
-        $model = new UsuarioModel();
+        $model = new RegistroComensalModel();
         $usuarios = $model->todos();
         $data['registros'] = $usuarios;
         return view('login/login01Formulario',$data);
