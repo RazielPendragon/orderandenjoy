@@ -13,7 +13,7 @@ class MesaEntity extends Entity
         "estado_mesa" => "estado_mesa",
         "capacidad_mesa" => "capacidad_mesa",
         "dia_reserva" => "dia_reserva",
-        "restaurante" => "restautante_id",
+        "restaurante" => "restaurantes_id",
     ];
 
     protected $casts   = [];

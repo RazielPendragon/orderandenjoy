@@ -1,9 +1,4 @@
-
-<!-- estoy agregando 
-<a href="<?php echo site_url('/mesaRestaurante-agragarBaseDatos/')?>">Agregar</a>
 <?php session_start(); ?>
--->
-
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
@@ -21,13 +16,9 @@
         <label>Capacidad</label>
         <input type="text" name="capacidad" class="form-control"/>
       </div>
+  
       <div class="form-group">
-        <label>Dia reserva</label>
-        <input type="text" name="dia_reserva" class="form-control"/>
-      </div>
-      
-      <div class="form-group">
-      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->restaurante_id?>"> 
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
       <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>

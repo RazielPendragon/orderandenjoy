@@ -82,14 +82,11 @@ $routes->get('mesaRestaurante-lista','MesaRestauranteController::lista');
 $routes->add('mesaRestaurante-agregarFormulario','MesaRestauranteController::agregarFormulario');
 $routes->post('mesaRestaurante-agregarBaseDatos-continuar', 'MesaRestauranteController::agregarBaseDatos');
 //
-$routes->add('mesaRestaurante-editarFormulario','MesaRestauranteController::editarFormulario');
-$routes->add('mesaRestaurante-editarBaseDato','MesaRestauranteController::editarBaseDato');
+$routes->add('mesaRestaurante-editarFormulario/(:num)','MesaRestauranteController::editarFormulario/$1');
+$routes->add('mesaRestaurante-editarBaseDatos','MesaRestauranteController::editarBaseDatos');
 //
-$routes->add('mesaRestaurante-editarFormulario', 'MesaRestauranteController::editarFormulario');
-$routes->post('mesaRestaurante-editarContinuar-continuar', 'MesaRestauranteController::editarContinuar');
-//
-$routes->get('mesaRestaurante-eliminarFormulario', '::MesaRestauranteController::eliminarFormulario');
-$routes->post('mesaRestaurante-eliminarContinuar-continuar', 'MesaRestauranteController::eliminarContinuar');
+$routes->get('mesaRestaurante-eliminarFormulario/(:num)', 'MesaRestauranteController::eliminarFormulario/$1');
+$routes->post('mesaRestaurante-eliminarBaseDatos', 'MesaRestauranteController::eliminarBaseDatos');
 //
 $routes->add('mesaRestaurante-cancelar', 'MesaRestauranteController::cancelar');
 

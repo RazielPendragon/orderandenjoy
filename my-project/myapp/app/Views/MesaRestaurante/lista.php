@@ -1,15 +1,10 @@
-
-<!--<a href="<?php echo site_url('/mesaRestaurante-agregarFormulario/')?>">Agregar</a>
-<a href="<?php echo site_url('/mesaRestaurante-editarFormulario/')?>">Editar</a>
--->
-
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/reservas-volver/'.$_SESSION ['USR']->usuario_id) ?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/reservas-volver/') ?>" class="btn btn-success mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/mesaRestaurante-agregarFormulario/') ?>" class="btn btn-success mb-2">Agregar reserva</a>
@@ -50,8 +45,8 @@
              <!--<td><?php echo $reg->restaurante_id; ?></td> (no ocupar por ahora)-->
              <td><?php echo $reg->dia_reserva; ?></td>
              <td>
-              <a href="<?php echo site_url('/mesa-editar/'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/mesa-eliminar/'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-editarFormulario/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-eliminarFormulario/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>
               </td>
       
           </tr>

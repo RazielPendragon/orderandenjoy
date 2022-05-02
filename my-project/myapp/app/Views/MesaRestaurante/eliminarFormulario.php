@@ -7,8 +7,8 @@
  
 
 <div class="container mt-5">
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesa-eliminar-continuar/') ?>">
-	  <input type="hidden" name="id" value="<?php echo($mesa->id);?>"/>
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-eliminarBaseDatos/') ?>">
+	  <input type="hidden" name="id" value="<?php echo($mesa->mesa_id);?>"/>
       <div class="form-group">
         <label>N° mesa:</label> <?php echo($mesa->nombre_mesa); ?>
       </div>

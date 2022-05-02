@@ -1,12 +1,11 @@
-<!-- estoy editando
-<a href="<?php echo site_url('/mesaRestaurante-editarFormulario/')?>">editar</a> -->
+<?php session_start(); ?>
 
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
   <div class="container mt-5">
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-editarContinuar-continuar') ?>">
-    <input type="hidden" name="id" value="<?php echo($mesa->id);?>"/>
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-editarBaseDatos') ?>">
+    <input type="hidden" name="id" value="<?php echo($mesa->mesa_id);?>"/>
       <div class="form-group">
         <label>N° mesa</label>
         <input type="text" name="n_mesa" class="form-control" value="<?php echo($mesa->nombre_mesa); ?>"/>
@@ -25,7 +24,7 @@
       </div>
 
       <div class="form-group">
-      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->restaurante_id?>"> 
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
       <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>

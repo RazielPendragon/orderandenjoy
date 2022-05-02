@@ -10,9 +10,12 @@ use App\Entities\MesaEntity;
 class MesaRestauranteController extends Controller
 {
     public function lista(){
+        session_start();
+        $usr= $_SESSION['USR'];
        $mod = new MesaModel();
         // Buscamos las mesas
-        $mesas = $mod->todos();
+        $mesas = $mod->todos($usr->id);
+        // o todEs (?)
         // UN EJEMPLO PARA MAS  ADELANTE
         //$mesa = $mod->soloConA();
         
@@ -38,7 +41,7 @@ class MesaRestauranteController extends Controller
     public function agregarBaseDatos(){
         // Mandar los datos a la BD
         $unMesa = new MesaEntity();
-        $unMesa->nombre_mesa=  $this->request->getVar('mesa');
+        $unMesa->nombre_mesa=  $this->request->getVar('n_mesa');
         $unMesa->estado_mesa =  $this->request->getVar('estado');
         $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
         $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
@@ -63,7 +66,7 @@ class MesaRestauranteController extends Controller
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
     $unMesa = new MesaEntity();
     $unMesa->mesa= $this->request->getVar('id');
-    $unMesa->nombre_mesa =  $this->request->getVar('mesa');
+    $unMesa->nombre_mesa =  $this->request->getVar('n_mesa');
     $unMesa->estado_mesa =  $this->request->getVar('estado');
     $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
     $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
@@ -82,14 +85,14 @@ class MesaRestauranteController extends Controller
         return view('MesaRestaurante/eliminarFormulario',$data);
     }
     
-    public function eliminarContinuar(){
+    public function eliminarBaseDatos(){
          // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
          $unMesa= new MesaEntity();
          $unMesa->id = $this->request->getVar('id');
          // Obtenemos la clase del Model que controla los conciertos
          $mod = new MesaModel();
          // Mandamos la Transacciòn ala Base de DAtos
-         $mod->eliminar($unMesa);   
+         $mod->eliminarFormulario($unMesa);   
          //Home
          return $this->lista();
      }
