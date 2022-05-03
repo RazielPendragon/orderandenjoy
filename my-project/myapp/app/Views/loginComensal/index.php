@@ -25,9 +25,9 @@
           <?php foreach($registros as $reg): ?>
           <tr>
              <td><?php echo $reg->id; ?></td>
-             <td><?php echo $reg->nombreMascota; ?></td>
-             <td><?php echo $reg->fechaMascota; ?></td>
-             <td><?php echo $reg->razaMascota; ?></td>
+             <td><?php echo $reg->nombreCompleto; ?></td>
+             <td><?php echo $reg->correo; ?></td>
+             <td><?php echo $reg->telefono; ?></td>
              <td>
               <a href="<?php echo site_url('/registroCrud/ver'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
               <a href="<?php echo site_url('/registroCrud/editar01Formulario'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
