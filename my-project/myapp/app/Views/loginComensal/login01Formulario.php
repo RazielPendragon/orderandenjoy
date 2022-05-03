@@ -4,7 +4,7 @@
  
   <div class="container mt-5">
   <h1>Accede a tu cuenta</h1>
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('login-login01Validar/') ?>">
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('Comensal-Validar/') ?>">
       <div class="form-group">
         <label>Ingrese su correo electrónico:</label>
         <input type="email" name="el_correo" class="form-control" required/>

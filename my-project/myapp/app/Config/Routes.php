@@ -103,6 +103,8 @@ $routes->add('reservas-volver', 'LoginLogOutController::volver');
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
+$routes->add('Comensal-Login', 'LoginComensal::login01Formulario');
+$routes->add('Comensal-Validar', 'LoginComensal::login02Validar');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

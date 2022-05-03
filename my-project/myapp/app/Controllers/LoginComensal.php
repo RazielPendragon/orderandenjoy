@@ -3,12 +3,12 @@
 namespace App\Controllers;
 
 use App\Models\RegistroComensalModel;
-
-class LoginLogOutController extends BaseController
+use App\Models\UsuarioComensalModel;
+class LoginComensal extends BaseController
 {
     public function index(){
         // Pal Home
-        return view('login/index');
+        return view('loginComensal/index');
     }
     public function login01Formulario()
     {
@@ -20,12 +20,13 @@ class LoginLogOutController extends BaseController
         $model = new RegistroComensalModel();
         $usuarios = $model->todos();
         $data['registros'] = $usuarios;
-        return view('login/login01Formulario',$data);
+        return view('loginComensal/login01Formulario',$data);
     }
 
     public function login02Validar()
     {
-        $pk=$_POST['pk'];
+        $correo=$_POST['el_correo'];
+        $clave=$_POST['la_correo'];
         // Como swbe funcioanr
         // ** Recueprar los datos 
         // ** Buscar el usr en la bd (existe?)
@@ -37,13 +38,18 @@ class LoginLogOutController extends BaseController
 
         // Dejamos el USR en Session ()        
         // ** Buscamos el usuario
-        $model = new UsuarioModel();
-        $usuario = $model->unUsuario($pk);
+        $model = new UsuarioComensalModel();
+        $usuario = $model->usuarioPorCorreo($correo,$clave);
         // Lo poenmos en sesion
         session_start();
         $_SESSION['USR']= $usuario;
         // Pal Home!!!
-        return $this->index();
+        if ($usuario){
+            return $this->index();
+        }
+        else {
+            return view('loginComensal/login01Formulario');
+        }
     }
     public function volver()
     {

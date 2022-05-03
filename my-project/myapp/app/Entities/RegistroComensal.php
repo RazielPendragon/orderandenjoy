@@ -4,7 +4,7 @@ namespace App\Entities;
 
 use CodeIgniter\Entity\Entity;
 
-class Registro extends Entity
+class RegistroComensal extends Entity
 {
 
     protected $datamap = [

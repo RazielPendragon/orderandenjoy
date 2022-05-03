@@ -2,7 +2,7 @@
 namespace App\Models;
 use CodeIgniter\Model;
 use App\Entities\RegistroComensal;
-class registroModel extends Model
+class RegistroComensalModel extends Model
 {
     protected $table = 'UsuarioComensal';
     protected $primaryKey = 'usuario_comensal_id';
@@ -61,10 +61,15 @@ class registroModel extends Model
         $this->update($unRegistro->id,$parametros);
     }
 
-    public function todEs(){
+    public function todos(){
         return $this->orderBy('usuario_comensal_correo', 'DESC')->findAll(); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
     }
-
+    public function obtenerusuario($correo){
+        $b = $this->builder();
+        $b->where('usuario_comensal_correo',$correo);
+        $consulta = $b->get();
+        return $consulta->getCustomResultObject('App\Entities\RegistroComensal'); // algo asi como select * from CONCIERTOS order by  CONCIERTO_NOMBRE
+    }
     public function soloConA(){
         $b = $this->builder();
         $b->like('usuario_comensal_correo','A'); // esto es concierto_nombre like '%A%'
