@@ -88,11 +88,11 @@ class MesaRestauranteController extends Controller
     public function eliminarBaseDatos(){
          // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
          $unMesa= new MesaEntity();
-         $unMesa->id = $this->request->getVar('id');
+         $unMesa->mesa = $this->request->getVar('id');
          // Obtenemos la clase del Model que controla los conciertos
          $mod = new MesaModel();
          // Mandamos la Transacciòn ala Base de DAtos
-         $mod->eliminarFormulario($unMesa);   
+         $mod->eliminar($unMesa);   
          //Home
          return $this->lista();
      }

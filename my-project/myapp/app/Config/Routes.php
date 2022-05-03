@@ -62,7 +62,6 @@ $routes->post('menu-elimnar-continuar', 'MenuCrud::eliminar02Continuar');
 $routes->add('menu-cancelar', 'MenuCrud::cancelar');
 //
 $routes->add('menu-volver', 'LoginLogOutController::volver');
-$routes->add('reservas-volver', 'LoginLogOutController::volver');
 // DEMO LOGIN
 //
 $routes->add('login', 'LoginLogOutController::index');
@@ -89,6 +88,7 @@ $routes->get('mesaRestaurante-eliminarFormulario/(:num)', 'MesaRestauranteContro
 $routes->post('mesaRestaurante-eliminarBaseDatos', 'MesaRestauranteController::eliminarBaseDatos');
 //
 $routes->add('mesaRestaurante-cancelar', 'MesaRestauranteController::cancelar');
+$routes->add('reservas-volver', 'LoginLogOutController::volver');
 
 /*
  * --------------------------------------------------------------------

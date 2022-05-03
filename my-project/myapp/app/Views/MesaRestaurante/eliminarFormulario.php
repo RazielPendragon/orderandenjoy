@@ -1,4 +1,4 @@
-<a href="<?php echo site_url('/meSA-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+<a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
 
 
 <?= $this->extend('formaStandar') ?>
@@ -23,7 +23,7 @@
       </div>
       <div class="form-group">
       <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-      <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>
