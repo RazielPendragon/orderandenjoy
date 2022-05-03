@@ -6,11 +6,7 @@
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>
-             <th>ID</th>
-             <th>Nombre Mascota</th>
-             <th>Fecha de Nacimiento</th>
-             <th>Raza Mascota</th>
-             <th>Action</th>
+             <th>Aqui van los restaurantes</th>
           </tr>
        </thead>
        <tbody>

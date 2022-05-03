@@ -25,10 +25,11 @@ class LoginComensal extends BaseController
 
     public function login02Validar()
     {
-        $correo=$_POST['el_correo'];
-        $clave=$_POST['la_correo'];
-        // Como swbe funcioanr
-        // ** Recueprar los datos 
+        // Como debe funcioanr-
+        // ** Recueprar los datos
+        $unCorreo = $_POST["el_correo"];
+        $unaClave = $_POST["la_clave"];
+        
         // ** Buscar el usr en la bd (existe?)
         // ** Valdiar que la passw del usr esta ok 
         // ==> Guardar en la sesion
@@ -39,17 +40,22 @@ class LoginComensal extends BaseController
         // Dejamos el USR en Session ()        
         // ** Buscamos el usuario
         $model = new UsuarioComensalModel();
-        $usuario = $model->usuarioPorCorreo($correo,$clave);
-        // Lo poenmos en sesion
-        session_start();
-        $_SESSION['USR']= $usuario;
-        // Pal Home!!!
-        if ($usuario){
+        $usuario = $model->usuarioPorCorreo($unCorreo,$unaClave);
+        // **$clave = $model->usuarioPorclave($unaClave);
+
+        if (sizeof($usuario) ==1 ) {
+            session_start();
+            $_SESSION['USR']= $usuario[0];
+         // **   $_SESSION['USR']= $clave[0];
             return $this->index();
+    
         }
-        else {
-            return view('loginComensal/login01Formulario');
-        }
+        else{
+           
+            echo "Correo electrónico y/o contraseña inválidos.";
+            return $this->login01Formulario();  
+            
+        }  
     }
     public function volver()
     {
