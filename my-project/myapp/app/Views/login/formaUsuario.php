@@ -29,7 +29,7 @@
     <?php }else{ ?>
     <p>
         <a href="<?php echo site_url('/login-login/')?>">LogIn Restaurante</a>
-        <a href="<?php echo site_url('/login-login/')?>">LogIn Comensal</a>
+        <a href="<?php echo site_url('/Comensal-Login/')?>">LogIn Comensal</a>
     </p>
     <?php } ?>
 

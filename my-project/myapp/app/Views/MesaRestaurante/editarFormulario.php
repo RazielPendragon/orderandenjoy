@@ -26,7 +26,7 @@
       <div class="form-group">
       <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
-      <a href="<?php echo site_url('/mesa-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>
