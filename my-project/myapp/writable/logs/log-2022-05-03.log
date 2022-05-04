@@ -1,0 +1,50 @@
+ERROR - 2022-05-03 17:22:43 --> Unknown column 'n_mesa' in 'order clause'
+CRITICAL - 2022-05-03 17:22:43 --> Call to a member function getResult() on bool
+#0 /app/myapp/system/BaseModel.php(584): CodeIgniter\Model->doFindAll()
+#1 /app/myapp/app/Models/MesaModel.php(34): CodeIgniter\BaseModel->findAll()
+#2 /app/myapp/app/Controllers/MesaRestauranteController.php(17): App\Models\MesaModel->todos()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\MesaRestauranteController->lista()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-03 17:23:05 --> Table 'restaurantes.usuariocomensal' doesn't exist
+CRITICAL - 2022-05-03 17:23:05 --> Call to a member function getResult() on bool
+#0 /app/myapp/system/BaseModel.php(584): CodeIgniter\Model->doFindAll()
+#1 /app/myapp/app/Models/RegistroComensalModel.php(65): CodeIgniter\BaseModel->findAll()
+#2 /app/myapp/app/Controllers/LoginComensal.php(21): App\Models\RegistroComensalModel->todos()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\LoginComensal->login01Formulario()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-03 17:24:08 --> Table 'restaurantes.usuariocomensal' doesn't exist
+CRITICAL - 2022-05-03 17:24:08 --> Call to a member function getResult() on bool
+#0 /app/myapp/system/BaseModel.php(584): CodeIgniter\Model->doFindAll()
+#1 /app/myapp/app/Models/RegistroComensalModel.php(65): CodeIgniter\BaseModel->findAll()
+#2 /app/myapp/app/Controllers/LoginComensal.php(21): App\Models\RegistroComensalModel->todos()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\LoginComensal->login01Formulario()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-03 18:28:39 --> Table 'restaurantes.usuariocomensal' doesn't exist
+CRITICAL - 2022-05-03 18:28:39 --> Call to a member function getResult() on bool
+#0 /app/myapp/system/BaseModel.php(584): CodeIgniter\Model->doFindAll()
+#1 /app/myapp/app/Models/RegistroComensalModel.php(65): CodeIgniter\BaseModel->findAll()
+#2 /app/myapp/app/Controllers/LoginComensal.php(21): App\Models\RegistroComensalModel->todos()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\LoginComensal->login01Formulario()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-03 18:28:46 --> Table 'restaurantes.usuariocomensal' doesn't exist
+CRITICAL - 2022-05-03 18:28:46 --> Call to a member function getResult() on bool
+#0 /app/myapp/system/BaseModel.php(584): CodeIgniter\Model->doFindAll()
+#1 /app/myapp/app/Models/RegistroComensalModel.php(65): CodeIgniter\BaseModel->findAll()
+#2 /app/myapp/app/Controllers/LoginComensal.php(21): App\Models\RegistroComensalModel->todos()
+#3 /app/myapp/system/CodeIgniter.php(832): App\Controllers\LoginComensal->login01Formulario()
+#4 /app/myapp/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /app/myapp/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /app/myapp/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
