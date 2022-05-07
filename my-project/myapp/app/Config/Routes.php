@@ -105,6 +105,7 @@ $routes->add('reservas-volver', 'LoginLogOutController::volver');
  */
 $routes->add('Comensal-Login', 'LoginComensal::login01Formulario');
 $routes->add('Comensal-Validar', 'LoginComensal::login02Validar');
+$routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

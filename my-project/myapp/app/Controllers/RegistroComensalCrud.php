@@ -7,13 +7,13 @@ use App\Models\RegistroComensalModel;
 use App\Entities\RegistroComensal;
 use App\Models\UsuarioModel;
 //
-class registroCrud extends Controller
+class RegistroComensalCrud extends Controller
 {
 public function index(){
     // Obtenemos la clase del Model que controla los conciertos
-    $mod = new registroModel();
+    $mod = new RegistroComensalModel();
     // Buscamos los conciertos
-    $usuarios = $mod->todEs();
+    $usuarios = $mod->todos();
     // UN EJEMPLO PARA MAS ADELANTE
     //$conciertos = $mod->soloConA();
     

@@ -17,7 +17,9 @@
         <button type="submit" class="btn btn-primary btn-sm">ACCEDER</button>
         <a href="<?php echo site_url('###');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
-    </form>
+      <ul>
+      <li> <a href="<?php echo site_url('/Comensal-Registro/')?>">¿No tienes una cuenta? Registrate!!!</a></li>
+      </ul>
   </div>
 
   <?= $this->endSection() ?>

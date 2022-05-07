@@ -21,21 +21,6 @@
 				// https://getbootstrap.com/docs/4.0/components/buttons/
 				// Simpre respetar usar el mismo foramto
 		   ?>
-          <?php if($registros): ?>
-          <?php foreach($registros as $reg): ?>
-          <tr>
-             <td><?php echo $reg->id; ?></td>
-             <td><?php echo $reg->nombreCompleto; ?></td>
-             <td><?php echo $reg->correo; ?></td>
-             <td><?php echo $reg->telefono; ?></td>
-             <td>
-              <a href="<?php echo site_url('/registroCrud/ver'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
-              <a href="<?php echo site_url('/registroCrud/editar01Formulario'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/registroCrud/eliminar01Formulario'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
-              </td>
-          </tr>
-         <?php endforeach; ?>
-         <?php endif; ?>
        </tbody>
      </table>
   </div>
