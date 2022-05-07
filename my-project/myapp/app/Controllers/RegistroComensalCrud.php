@@ -103,7 +103,7 @@ public function eliminar02Continuar(){
  }
 
  public function cancelar(){
-    return $this->index();
+    return view('loginComensal/login01Formulario');
  }
 
 }
