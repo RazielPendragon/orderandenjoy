@@ -53,7 +53,8 @@ class LoginLogOutController extends BaseController
 
     public function logout(){
         // Sacamos el USR de la Session
-
+        session_start();
+        session_unset();
         //Pal Home
         return $this->index();
     }

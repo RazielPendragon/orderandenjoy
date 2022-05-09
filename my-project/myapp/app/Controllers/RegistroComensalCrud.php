@@ -47,8 +47,8 @@ public function agregar01Formulario(){
 public function agregar02Continuar(){
       
              // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unRegistro = new registro();
-    $unRegistro->NombreCompleto =  $this->request->getVar('Nombre Completo');
+    $unRegistro = new RegistroComensal();
+    $unRegistro->NombreCompleto =  $this->request->getVar('NombreCompleto');
     $unRegistro->correo =  $this->request->getVar('correo');
     $unRegistro->clave =  $this->request->getVar('clave');
     $unRegistro->telefono =  $this->request->getVar('telefono');
@@ -71,7 +71,7 @@ public function editar01Formulario($id){
 
 public function editar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-    $unRegistro = new registro();
+    $unRegistro = new RegistroComensal();
     $unRegistro->NombreCompleto =  $this->request->getVar('Nombre Completo');
     $unRegistro->correo =  $this->request->getVar('correo');
     $unRegistro->clave =  $this->request->getVar('clave');
@@ -92,10 +92,10 @@ public function eliminar01Formulario($id){
 
 public function eliminar02Continuar(){
      // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
-     $unRegistro = new registro();
+     $unRegistro = new RegistroComensal();
      $unRegistro->id = $this->request->getVar('id');
      // Obtenemos la clase del Model que controla los conciertos
-     $mod = new registroModel();
+     $mod = new RegistroComensalModel();
      // Mandamos la Transacciòn ala Base de DAtos
      $mod->eliminar($unRegistro);   
      //Home
