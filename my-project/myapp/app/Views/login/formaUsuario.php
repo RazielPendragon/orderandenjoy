@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
+<?php
+echo '<img src="https://dominio.es//Users/nicolesepulveda/Downloads/comida.jpg/imagen.jpg" alt="Texto Alternativo para la imágen" class="imágen_comida" id="Identificador para la imágen" width="300px" height="300px">';
+?>
+<img src="/Users/nicolesepulveda/Downloads/comida.jpg" class="img-fluid">
 <script
   src="https://code.jquery.com/jquery-3.6.0.slim.js"
   integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="

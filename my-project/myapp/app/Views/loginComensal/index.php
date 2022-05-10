@@ -2,14 +2,17 @@
 <?= $this->section('contenido') ?>
 
 
+
+
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>
-             <th>Aqui van los restaurantes</th>
+             <th>Encuentra tu Restaurante Preferido</th>
           </tr>
        </thead>
        <tbody>
+       
 		   <?php
 				// Primero se revisa que el arreglo "registros" no este vacio (siempre la BD puede devolver NADA)
 				// Luego apra cada Concierto (reg  --- por registro) en el listado dibujamos la tablita

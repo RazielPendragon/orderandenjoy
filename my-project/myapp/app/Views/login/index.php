@@ -14,9 +14,9 @@
         <li>Reservar mesa</li>
     </ul>
     <?php }else{ ?>
-    <p>
-        Favor ingrese.
-    </p>
+   
+   
+   
     <?php } ?>
 
 
