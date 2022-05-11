@@ -27,6 +27,15 @@
        </tbody>
      </table>
   </div>
+
+<div>
+</ul>
+   <h1>Comensales</h1>
+   <ul>
+       <li>Reservar mesa</li>
+   </ul>
+</div>
+
   <script>
     $(document).ready( function () {
       $('#users-list').DataTable();

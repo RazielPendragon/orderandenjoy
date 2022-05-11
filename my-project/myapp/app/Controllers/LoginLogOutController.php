@@ -41,7 +41,7 @@ class LoginLogOutController extends BaseController
         $usuario = $model->unUsuario($pk);
         // Lo poenmos en sesion
         session_start();
-        $_SESSION['USR']= $usuario;
+        $_SESSION['USR_R']= $usuario;
         // Pal Home!!!
         return $this->index();
     }
@@ -56,7 +56,7 @@ class LoginLogOutController extends BaseController
         session_start();
         session_unset();
         //Pal Home
-        return $this->index();
+        return view('welcome_message');
     }
 
 }

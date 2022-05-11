@@ -45,7 +45,7 @@ class LoginComensal extends BaseController
 
         if (sizeof($usuario) ==1 ) {
             session_start();
-            $_SESSION['USR']= $usuario[0];
+            $_SESSION['USR_C']= $usuario[0];
          // **   $_SESSION['USR']= $clave[0];
             return $this->index();
     
@@ -65,9 +65,10 @@ class LoginComensal extends BaseController
 
     public function logout(){
         // Sacamos el USR de la Session
-
+        session_start();
+        session_unset();
         //Pal Home
-        return $this->index();
+        return view('welcome_message');
     }
 
 }

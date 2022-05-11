@@ -7,10 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-echo '<img src="https://dominio.es//Users/nicolesepulveda/Downloads/comida.jpg/imagen.jpg" alt="Texto Alternativo para la imágen" class="imágen_comida" id="Identificador para la imágen" width="300px" height="300px">';
-?>
-<img src="/Users/nicolesepulveda/Downloads/comida.jpg" class="img-fluid">
+<!--img src="/Users/nicolesepulveda/Downloads/comida.jpg" class="img-fluid"-->
 <script
   src="https://code.jquery.com/jquery-3.6.0.slim.js"
   integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
@@ -22,20 +19,32 @@ echo '<img src="https://dominio.es//Users/nicolesepulveda/Downloads/comida.jpg/i
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 <div class="d-flex justify-content-end">
-    <?php if(isset($_SESSION['USR'])) {
+    <?php if(isset($_SESSION['USR_C'])) {
       
-      $usr =   $_SESSION['USR'];
+      $comensal =   $_SESSION['USR_C'];
     ?>
     <p>
-        <b><?php echo $usr->nombre_completo?></b>
-        <a href="<?php echo site_url('/login-logout/')?>">LogOut</a>
+        <b><?php echo $comensal->NombreCompleto?></b>
+        <a href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
     </p>
-    <?php }else{ ?>
+    <?php }else{ 
+          if(isset($_SESSION['USR_R'])){
+            $restaurant = $_SESSION['USR_R'];
+    ?>
+            <p>
+            <b><?php echo $restaurant->nombre_completo?></b>
+            <a href="<?php echo site_url('/login-logout/')?>">LogOut</a>
+
+            </p>
+            <?php
+
+          }else{
+      
+    ?>
     <p>
-        <a href="<?php echo site_url('/login-login/')?>">LogIn Restaurante</a>
         <a href="<?php echo site_url('/Comensal-Login/')?>">LogIn Comensal</a>
     </p>
-    <?php } ?>
+    <?php }} ?>
 
 </div>
 
@@ -49,5 +58,11 @@ echo '<img src="https://dominio.es//Users/nicolesepulveda/Downloads/comida.jpg/i
         <?= $this->renderSection('contenido') ?>
 
     </div>
+
+  <div class="d-flex justify-content-center">
+  <?php if(!isset($_SESSION['USR_C']) && !isset($_SESSION['USR_R'])) {?>
+  <a href="<?php echo site_url('/login-login/')?>">LogIn Restaurante</a>
+<?php } ?>  
+</div>
 </body>
 </html>

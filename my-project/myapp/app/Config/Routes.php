@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'LoginLogOutController::index');
+$routes->get('/', 'Home::index');
 
 // Ejemplo base
 
@@ -105,6 +105,8 @@ $routes->add('reservas-volver', 'LoginLogOutController::volver');
  */
 $routes->add('Comensal-Login', 'LoginComensal::login01Formulario');
 $routes->add('Comensal-Validar', 'LoginComensal::login02Validar');
+$routes->add('Comensal-logout', 'LoginComensal::logout');
+
 $routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 $routes->add('registro-cancelar', 'RegistroComensalCrud::cancelar');
 
