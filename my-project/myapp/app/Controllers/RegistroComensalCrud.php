@@ -5,7 +5,7 @@ use CodeIgniter\Controller;
 //
 use App\Models\RegistroComensalModel;
 use App\Entities\RegistroComensal;
-use App\Models\UsuarioModel;
+use App\Models\UsuarioModel; 
 //
 class RegistroComensalCrud extends Controller
 {
@@ -46,7 +46,7 @@ public function agregar01Formulario(){
 
 public function agregar02Continuar(){
       
-             // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+    // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
     $unRegistro = new RegistroComensal();
     $unRegistro->NombreCompleto =  $this->request->getVar('NombreCompleto');
     $unRegistro->correo =  $this->request->getVar('correo');
@@ -103,7 +103,7 @@ public function eliminar02Continuar(){
  }
 
  public function cancelar(){
-    return view('loginComensal/login01Formulario');
+    return view('loginComensal/login01Formulario'); //boton estaba bien, já
  }
 
 }

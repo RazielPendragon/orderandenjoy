@@ -7,3 +7,6 @@ CREATE TABLE restaurantes.usuarios (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8
 COLLATE=utf8_general_ci;
+
+
+

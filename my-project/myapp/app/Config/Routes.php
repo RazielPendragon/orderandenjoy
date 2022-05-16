@@ -110,6 +110,15 @@ $routes->add('Comensal-logout', 'LoginComensal::logout');
 $routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 $routes->add('registro-cancelar', 'RegistroComensalCrud::cancelar');
 
+$routes->get('Contacto-Registro', 'RegistroContactoRController::contactoFormulario');
+$routes->add('registroContacto-cancelar', 'RegistroContactoRController::cancelar');
+
+$routes->get('Administrador-Registro', 'RegistroAdministradorController::administradorFormulario');
+
+$routes->add('Restaurante-Login', 'LoginRestaurante::loginFormularioRestaurante');
+$routes->add('Restaurante-Validar', 'LoginRestaurante::loginValidarRestaurante');
+$routes->add('Restaurante-logout', 'LoginRestaurante::logoutRestaurante');
+
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
