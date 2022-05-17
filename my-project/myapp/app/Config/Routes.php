@@ -110,10 +110,12 @@ $routes->add('Comensal-logout', 'LoginComensal::logout');
 $routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 $routes->add('registro-cancelar', 'RegistroComensalCrud::cancelar');
 
-$routes->get('Contacto-Registro', 'RegistroContactoRController::contactoFormulario');
-$routes->add('registroContacto-cancelar', 'RegistroContactoRController::cancelar');
+$routes->get('Contacto-Registro', 'RegistroContactoCrud::agregar01Formulario');
+$routes->add('registro-cancelar', 'RegistroContactoCrud::cancelar');
 
-$routes->get('Administrador-Registro', 'RegistroAdministradorController::administradorFormulario');
+$routes->get('Restaurante-Registro', 'RegistroRestauranteCrud::agregar01Formulario');
+$routes->get('Restaurante-Agregar', 'RegistroRestauranteCrud::agregar02Continuar');
+$routes->add('registro-cancelar', 'RegistroRestauranteCrud::cancelar');
 
 $routes->add('Restaurante-Login', 'LoginRestaurante::loginFormularioRestaurante');
 $routes->add('Restaurante-Validar', 'LoginRestaurante::loginValidarRestaurante');
