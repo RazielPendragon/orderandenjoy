@@ -48,7 +48,7 @@ public function agregar02Continuar(){
     // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
     $unRegistro = new RegistroRestaurante();
     $unRegistro->NombreFantasia =  $this->request->getVar('NombreFantasia');
-    $unRegistro->RestauranteCiudad =  $this->request->getVar('RestauranteCiudad ');
+    $unRegistro->RestauranteCiudad =  $this->request->getVar('RestauranteCiudad');
     error_log($unRegistro->RestauranteCiudad);
     $unRegistro->RestauranteComuna =  $this->request->getVar('RestauranteComuna');
     $unRegistro->RestauranteDireccion =  $this->request->getVar('RestauranteDireccion');
