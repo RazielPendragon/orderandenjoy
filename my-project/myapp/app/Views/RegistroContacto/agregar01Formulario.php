@@ -45,7 +45,7 @@
       </div>
       <div class="form-group">
       <button type="submit" class="btn btn-primary btn-sm">REGISTRAR</button>
-      <a href="<?php echo site_url('/registro-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/registro-cancelarContacto/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
   </div>

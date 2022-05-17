@@ -111,11 +111,11 @@ $routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 $routes->add('registro-cancelar', 'RegistroComensalCrud::cancelar');
 
 $routes->get('Contacto-Registro', 'RegistroContactoCrud::agregar01Formulario');
-$routes->add('registro-cancelar', 'RegistroContactoCrud::cancelar');
+$routes->add('registro-cancelarContacto', 'RegistroContactoCrud::cancelar');
 
 $routes->get('Restaurante-Registro', 'RegistroRestauranteCrud::agregar01Formulario');
 $routes->get('Restaurante-Agregar', 'RegistroRestauranteCrud::agregar02Continuar');
-$routes->add('registro-cancelar', 'RegistroRestauranteCrud::cancelar');
+$routes->add('registro-cancelarRestaurante', 'RegistroRestauranteCrud::cancelar');
 
 $routes->add('Restaurante-Login', 'LoginRestaurante::loginFormularioRestaurante');
 $routes->add('Restaurante-Validar', 'LoginRestaurante::loginValidarRestaurante');

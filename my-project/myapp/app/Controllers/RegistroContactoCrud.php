@@ -108,7 +108,7 @@ public function eliminar01Formulario($id){
  }
 
  public function cancelar(){
-    return view('loginContacto/login01Formulario'); //boton estaba bien, já
+    return view('Welcome_message'); //boton estaba bien, já
  }
 
 }
