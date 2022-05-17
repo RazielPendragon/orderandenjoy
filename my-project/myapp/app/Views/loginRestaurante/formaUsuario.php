@@ -1,4 +1,5 @@
-<!-- <!doctype html>
+<?php session_start();?>
+<!doctype html>
 <html lang="en">
   <head>
   <meta charset="utf-8">
@@ -18,12 +19,12 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 <div class="d-flex justify-content-end">
-    <?php if(isset($_SESSION['USR'])) {
+    <?php if(isset($_SESSION['USR_R'])) {
       
-      $usr =   $_SESSION['USR'];
+      $usr =   $_SESSION['USR_R'];
     ?>
     <p>
-        <b><?php echo $usr->usuario_correo?></b><br>
+        <b><?php echo $usr->correo?></b><br>
         <a href="<?php echo site_url('/#')?>">Cerrar Sesión</a>
     </p>
     <?php }else{ ?>
@@ -46,4 +47,3 @@
     </div>
 </body>
 </html>
-    -->

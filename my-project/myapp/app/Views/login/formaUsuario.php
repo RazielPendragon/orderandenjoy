@@ -61,14 +61,12 @@
 
 <div class="d-flex justify-content-center">
   <?php if(!isset($_SESSION['USR_C']) && !isset($_SESSION['USR_R'])) {?>
-  <a href="<?php echo site_url('/login-login/')?>">LogIn Restaurante</a>
+  <a href="<?php echo site_url('/Restaurante-Login/')?>">LogIn Restaurante</a>
 <?php } ?>  
 </div>
-
 <div class="d-flex justify-content-center">
 
 <a href="<?php echo site_url('/Contacto-Registro/')?>">Contactanos</a> <!-- que nos lleve a contactoFormulario-->
 </div>
-
 </body>
 </html>

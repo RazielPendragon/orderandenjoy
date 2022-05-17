@@ -18,9 +18,9 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 <div class="d-flex justify-content-end">
-    <?php if(isset($_SESSION['USR'])) {
+    <?php if(isset($_SESSION['USR_C'])) {
       
-      $usr =   $_SESSION['USR'];
+      $usr =   $_SESSION['USR_C'];
     ?>
     <p>
         <b><?php echo $usr->usuario_correo?></b><br>

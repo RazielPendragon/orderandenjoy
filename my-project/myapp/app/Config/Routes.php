@@ -61,7 +61,7 @@ $routes->post('menu-elimnar-continuar', 'MenuCrud::eliminar02Continuar');
 //
 $routes->add('menu-cancelar', 'MenuCrud::cancelar');
 //
-$routes->add('menu-volver', 'LoginLogOutController::volver');
+$routes->add('menu-volver', 'LoginRestauranteController::volver');
 // DEMO LOGIN
 //
 $routes->add('login', 'LoginLogOutController::index');
@@ -70,11 +70,6 @@ $routes->add('login-login01Validar', 'LoginLogOutController::login02Validar');
 $routes->add('login-logout', 'LoginLogOutController::logout');
 
 //Tren: MesaRestauranteController
-
-$routes->add('login', 'LoginLogOutController::index');
-$routes->add('login-login', 'LoginLogOutController::login01Formulario');
-$routes->add('login-login01Validar', 'LoginLogOutController::login02Validar');
-$routes->add('login-logout', 'LoginLogOutController::logout');
 
 $routes->get('mesaRestaurante-lista','MesaRestauranteController::lista');
 //
@@ -88,7 +83,7 @@ $routes->get('mesaRestaurante-eliminarFormulario/(:num)', 'MesaRestauranteContro
 $routes->post('mesaRestaurante-eliminarBaseDatos', 'MesaRestauranteController::eliminarBaseDatos');
 //
 $routes->add('mesaRestaurante-cancelar', 'MesaRestauranteController::cancelar');
-$routes->add('reservas-volver', 'LoginLogOutController::volver');
+$routes->add('reservas-volver', 'LoginRestauranteController::volver');
 
 /*
  * --------------------------------------------------------------------
@@ -117,9 +112,9 @@ $routes->get('Restaurante-Registro', 'RegistroRestauranteCrud::agregar01Formular
 $routes->get('Restaurante-Agregar', 'RegistroRestauranteCrud::agregar02Continuar');
 $routes->add('registro-cancelarRestaurante', 'RegistroRestauranteCrud::cancelar');
 
-$routes->add('Restaurante-Login', 'LoginRestaurante::loginFormularioRestaurante');
-$routes->add('Restaurante-Validar', 'LoginRestaurante::loginValidarRestaurante');
-$routes->add('Restaurante-logout', 'LoginRestaurante::logoutRestaurante');
+$routes->add('Restaurante-Login', 'LoginRestauranteController::loginFormularioRestaurante');
+$routes->add('Restaurante-Validar', 'LoginRestauranteController::loginValidarRestaurante');
+$routes->add('Restaurante-logout', 'LoginRestauranteController::logoutRestaurante');
 
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {

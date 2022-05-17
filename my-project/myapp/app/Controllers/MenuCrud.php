@@ -12,10 +12,10 @@ class MenuCrud extends Controller
     public function index(){
     // Obtenemos la clase del Model que controla los Menús
     session_start();
-    $usr= $_SESSION['USR'];
+    $usr= $_SESSION['USR_R'];
     $mod = new MenuModel();
     // Buscamos los Menús
-    $menus = $mod->todEs($usr->usuario_id);
+    $menus = $mod->todEs($usr->id);
     // UN EJEMPLO PARA MASA ADELANTE
     //$menus = $mod->soloConA();
     
