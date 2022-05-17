@@ -11,3 +11,8 @@ CREATE TABLE restaurantes.UsuarioRestaurante (
   
   PRIMARY KEY (usuario_restaurante_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+
+
+url administrador oculto
+http://localhost:8000/index.php/Restaurante-Registro/
