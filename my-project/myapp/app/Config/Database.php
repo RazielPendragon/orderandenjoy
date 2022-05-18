@@ -32,7 +32,7 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'orderandenjoy-mariadb-1',
+        'hostname' => 'orderandenjoy_mariadb_1',
         'username' => 'restaurante',
         'password' => '1qaz...',
         'database' => 'restaurantes',
@@ -88,3 +88,72 @@ class Database extends Config
         }
     }
 }
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
