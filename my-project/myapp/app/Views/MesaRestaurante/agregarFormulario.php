@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
-
+<?= $this->extend('/loginRestaurante/formausuario') ?>
 <?= $this->section('contenido') ?>
   <div class="container mt-5">
     <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-agregarBaseDatos-continuar') ?>">
@@ -21,7 +21,7 @@
         <input type="text" name="dia_reserva" class="form-control"/>
       </div>
       <div class="form-group">
-      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR']->id?>"> 
+      <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR_R']->id_restaurante?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
       <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>

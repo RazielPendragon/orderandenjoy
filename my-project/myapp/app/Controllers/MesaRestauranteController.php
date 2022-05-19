@@ -11,10 +11,10 @@ class MesaRestauranteController extends Controller
 {
     public function lista(){
         session_start();
-        $usr= $_SESSION['USR'];
+        $usr= $_SESSION['USR_R'];
        $mod = new MesaModel();
         // Buscamos las mesas
-        $mesas = $mod->todos($usr->id);
+        $mesas = $mod->todos($usr->id_restaurante);
         // o todEs (?)
         // UN EJEMPLO PARA MAS  ADELANTE
         //$mesa = $mod->soloConA();
