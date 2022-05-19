@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?= $this->extend('/loginRestaurante/formausuario') ?>
 <?= $this->section('contenido') ?>
 <?php if(isset($_SESSION['USR_R'])) {

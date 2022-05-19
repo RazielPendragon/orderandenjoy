@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
-
+<?= $this->extend('/loginRestaurante/formausuario') ?>
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
@@ -9,7 +9,6 @@
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/menu-agregar') ?>" class="btn btn-success mb-2">Agegar Menú</a>
 	</div>
-  
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
        <thead>

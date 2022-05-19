@@ -48,7 +48,7 @@ $routes->post('base-elimnar-continuar', 'NavegarBaseController::eliminar02Contin
 //
 $routes->get('menu-lista', 'MenuCrud::index');
 //
-$routes->get('menu-ver', 'MenuCrud::ver');
+$routes->get('menu-ver/(:num)', 'MenuCrud::ver/$1');
 //
 $routes->get('menu-agregar', 'MenuCrud::agregar01Formulario');
 $routes->post('menu-agregar-continuar', 'MenuCrud::agregar02Continuar');

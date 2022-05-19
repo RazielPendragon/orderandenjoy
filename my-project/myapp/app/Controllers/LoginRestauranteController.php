@@ -7,6 +7,7 @@ use App\Models\UsuarioRestauranteModel;
 class LoginRestauranteController extends BaseController
 {
     public function index(){
+        session_start();
         // Pal Home********
       return view('loginRestaurante/index');
     }

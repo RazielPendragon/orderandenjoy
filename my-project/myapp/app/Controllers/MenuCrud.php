@@ -15,7 +15,7 @@ class MenuCrud extends Controller
     $usr= $_SESSION['USR_R'];
     $mod = new MenuModel();
     // Buscamos los Menús
-    $menus = $mod->todEs($usr->id);
+    $menus = $mod->todEs($usr->id_restaurante);
     // UN EJEMPLO PARA MASA ADELANTE
     //$menus = $mod->soloConA();
     
@@ -39,11 +39,11 @@ public function ver($id){
     // 
     $data = $this->recuperaMenu($id);
     //Vamos a la vista
-    return view('Menuview/ver',$data);
+    return view('MenuView/ver',$data);
 }
 
 public function agregar01Formulario(){
-    return view('Menuview/agregar01Formulario');
+    return view('MenuView/agregar01Formulario');
 }
 
 public function agregar02Continuar(){
