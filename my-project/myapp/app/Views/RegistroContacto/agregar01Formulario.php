@@ -16,6 +16,10 @@
         <input type="text" name="RazonSocial" class="form-control" required/>
       </div>
       <div class="form-group">
+        <label>Ingrese rut:</label>
+        <input type="text" name="ContactoRut" class="form-control" required/>
+      </div>
+      <div class="form-group">
         <label>Nombre fantasia (restaurante)</label>
         <input type="text" name="NombreFantasia" class="form-control" required/>
       </div>
@@ -34,10 +38,6 @@
       <div class="form-group">
         <label>Correo electrónico</label>
         <input type="email" name="correo" class="form-control" required/>
-      </div>
-      <div class="form-group">
-        <label>Cree una contraseña:</label>
-        <input type="password" name="clave" class="form-control" required/>
       </div>
       <div class="form-group">
         <label>Ingrese su teléfono:</label>

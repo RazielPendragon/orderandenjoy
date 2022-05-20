@@ -49,12 +49,12 @@ public function agregar02Continuar(){
     $unRegistro = new RegistroContacto();
     $unRegistro->NombreCompleto =  $this->request->getVar('NombreCompleto');
     $unRegistro->RazonSocial =  $this->request->getVar('RazonSocial');
+    $unRegistro->ContactoRut =  $this->request->getVar('ContactoRut');
     $unRegistro->NombreFantasia =  $this->request->getVar('NombreFantasia');
     $unRegistro->ContactoCuidad =  $this->request->getVar('ContactoCuidad');
     $unRegistro->ContactoComuna =  $this->request->getVar('ContactoComuna');
     $unRegistro->ContactoDireccion =  $this->request->getVar('ContactoDireccion');
     $unRegistro->correo =  $this->request->getVar('correo');
-    $unRegistro->clave =  $this->request->getVar('clave');
     $unRegistro->telefono =  $this->request->getVar('telefono');
 
     // Obtenemos la clase del Model que controla los conciertos
@@ -79,7 +79,6 @@ public function editar02Continuar(){
     $unRegistro = new RegistroContacto();
     $unRegistro->NombreCompleto =  $this->request->getVar('Nombre Completo');
     $unRegistro->correo =  $this->request->getVar('correo');
-    $unRegistro->clave =  $this->request->getVar('clave');
     $unRegistro->telefono =  $this->request->getVar('telefono');
     // Obtenemos la clase del Model que controla los conciertos
     $mod = new RegistroContactoModel();
