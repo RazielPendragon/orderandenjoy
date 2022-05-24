@@ -9,6 +9,7 @@
           </tr>
        </thead>
        <tbody>
+         <ul>
 		   <?php
           foreach ($registros as $registro){
             $restaurante = $registro['restaurante'];
@@ -20,11 +21,15 @@
             if ($menus) {}
               foreach ($menus as $plato) {
                 ?>
-                  <li><?= $plato->nombre ?></li>
+                  <li><?= $plato->nombre ?>
+                  <ul><li><?= $plato->descripcion ?></li></ul>
+                  <ul><li><?= $plato->precio ?></li></ul>
+                  </li>
                 <?php
               }
             }
 		   ?>
+       </ul>
        </tbody>
      </table>
   </div>
