@@ -60,7 +60,7 @@ class LoginComensal extends BaseController
             session_start();
             $_SESSION['USR_C']= $usuario[0];
          // **   $_SESSION['USR']= $clave[0];
-            return $this->index();
+            return redirect()-> route ('Comensal-home');
     
         }
         else{

@@ -101,6 +101,7 @@ $routes->add('reservas-volver', 'LoginRestauranteController::volver');
 $routes->add('Comensal-Login', 'LoginComensal::login01Formulario');
 $routes->add('Comensal-Validar', 'LoginComensal::login02Validar');
 $routes->add('Comensal-logout', 'LoginComensal::logout');
+$routes->add('Comensal-home', 'LoginComensal::index');
 
 $routes->get('Comensal-Registro', 'RegistroComensalCrud::agregar01Formulario');
 $routes->add('registro-cancelar', 'RegistroComensalCrud::cancelar');
