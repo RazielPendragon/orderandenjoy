@@ -12,7 +12,6 @@ class MesaEntity extends Entity
         "nombre_mesa" => "n_mesa",
         "estado_mesa" => "estado_mesa",
         "capacidad_mesa" => "capacidad_mesa",
-        "dia_reserva" => "dia_reserva",
         "restaurante" => "restaurantes_id",
     ];
 

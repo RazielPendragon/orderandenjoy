@@ -19,9 +19,6 @@
         <label>Capacidad:</label><?php echo($mesa->capacidad_mesa);?>
       </div>
       <div class="form-group">
-        <label>Dia Reserva:</label><?php echo($mesa->dia_reserva);?>
-      </div>
-      <div class="form-group">
       <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
       <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>

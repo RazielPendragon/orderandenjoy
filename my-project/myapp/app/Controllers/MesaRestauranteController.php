@@ -44,7 +44,6 @@ class MesaRestauranteController extends Controller
         $unMesa->nombre_mesa=  $this->request->getVar('n_mesa');
         $unMesa->estado_mesa =  $this->request->getVar('estado');
         $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
-        $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
         $unMesa->restaurante =  $this->request->getVar('restaurante');
         //
         $mod = new MesaModel();
@@ -69,7 +68,6 @@ class MesaRestauranteController extends Controller
     $unMesa->nombre_mesa =  $this->request->getVar('n_mesa');
     $unMesa->estado_mesa =  $this->request->getVar('estado');
     $unMesa->capacidad_mesa=  $this->request->getVar('capacidad');
-    $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
     $unMesa->restaurante =  $this->request->getVar('restaurante');
     // Obtenemos la clase del Model que controla los conciertos
     $mod = new MesaModel();

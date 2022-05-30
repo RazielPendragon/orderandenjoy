@@ -19,11 +19,6 @@
         <input type="text" name="capacidad" class="form-control" value="<?php echo($mesa->capacidad_mesa);?>"/>
       </div>
       <div class="form-group">
-        <label>Dia reserva</label>
-        <input type="text" name="dia_reserva" class="form-control" value="<?php echo($mesa->dia_reserva);?>"/>
-      </div>
-
-      <div class="form-group">
       <input type ="hidden" name= "restaurante" value= "<?= $_SESSION ['USR_R']->id_restaurante?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Editar</button>
       <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
@@ -47,10 +42,6 @@ if ($("#add_create").length > 0) {
             required: true,
             maxlength: 150
           },
-          dia_reserva: {
-            required: true,
-            maxlength: 150
-          },
         },
         messages: {
           n_mesa: {
@@ -64,10 +55,6 @@ if ($("#add_create").length > 0) {
           capacidad: {
             required: "La capacidad de la mesa es obligatorio",
             maxlength: "La capacidad de la mesa debe ser entero positivo.",
-          },
-          dia_reserva: {
-            required: "El dia de la reserva es obligatorio",
-            maxlength: "El dia de la reserva debe ser entero positivo.",
           },
         },
       })

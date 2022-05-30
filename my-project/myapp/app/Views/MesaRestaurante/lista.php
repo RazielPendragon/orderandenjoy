@@ -19,7 +19,6 @@
              <th>ESTADO MESA</th>
              <th>CAPACIDAD</th>
             <!-- <th>RESTAURANTE</th> (no ocupar por ahora)-->
-             <th>DIA RESERVA</th>
              <th>ACCION</th>
           </tr>
        </thead>
@@ -43,7 +42,6 @@
              <td><?php echo $reg->estado_mesa; ?></td>
              <td><?php echo $reg->capacidad_mesa; ?></td>
              <!--<td><?php echo $reg->restaurante_id; ?></td> (no ocupar por ahora)-->
-             <td><?php echo $reg->dia_reserva; ?></td>
              <td>
               <a href="<?php echo site_url('/mesaRestaurante-editarFormulario/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
               <a href="<?php echo site_url('/mesaRestaurante-eliminarFormulario/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>

@@ -7,7 +7,7 @@ class MesaModel extends Model
     protected $table = 'Mesa';
     protected $primaryKey = 'mesa_id';
     
-    protected $allowedFields = ['mesa_id', 'n_mesa', 'estado_mesa', 'capacidad_mesa','dia_reserva','restaurantes_id'];
+    protected $allowedFields = ['mesa_id', 'n_mesa', 'estado_mesa', 'capacidad_mesa','restaurantes_id'];
 
     // Tipo de dato a devolver
     protected $returnType = 'App\Entities\MesaEntity';
@@ -21,7 +21,6 @@ class MesaModel extends Model
             'n_mesa' => $unMesa->nombre_mesa,
             'estado_mesa' => $unMesa->estado_mesa,
             'capacidad_mesa' => $unMesa->capacidad_mesa,
-            'dia_reserva' => $unMesa->dia_reserva,
             'restaurantes_id' => $unMesa->restaurante,
 
         ]
