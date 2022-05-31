@@ -26,7 +26,6 @@ class LoginComensal extends BaseController
         return view('loginComensal/index',$data);
     
     }
-
     public function mesaReservar(){
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $mod = new MesaModel(); //mod es la variable a modelo
@@ -40,13 +39,9 @@ class LoginComensal extends BaseController
             $dataMesa['dia'] = $mesas; // y aqui guardamos los menus en el mismo mapa
             $data['registros'][] = $dataMesa; //y aqui lo agregamos al resulatdo
         } 
-        return view('loginComensal/mesaReserva',$data);
+        return view('loginComensal/mesaReservar',$data);
     
     }
-
-
-
-
     public function login01Formulario()
     {
         // Como Debe funcionar

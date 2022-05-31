@@ -15,7 +15,7 @@
             $restaurante = $registro['restaurante'];
             $menus = $registro['menu'];
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/xxxxxxx/')?>">Reserva aqui</a></li><br/> 
+            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-reservar/')?>">Reserva aqui</a></li><br/> 
             Menu:
             <?php
             if ($menus) {}

@@ -95,7 +95,7 @@ $routes->add('mesaRestaurante-agregarHoras/(:num)','MesaRestauranteController::a
 $routes->post('mesaRestaurante-horasBaseDatos-continuar', 'MesaRestauranteController::horasBaseDatos');
 
 /////////////RUTAS PARA RESERVAR
-$routes->add('mesaRestaurante-reservar', 'MesaRestauranteController::mesaReservar');
+$routes->add('mesaRestaurante-reservar/(:num)', 'MesaRestauranteController::mesaReservar/$1');
 
 
 /*
@@ -129,7 +129,6 @@ $routes->add('registro-cancelarRestaurante', 'RegistroRestauranteCrud::cancelar'
 $routes->add('Restaurante-Login', 'LoginRestauranteController::loginFormularioRestaurante');
 $routes->add('Restaurante-Validar', 'LoginRestauranteController::loginValidarRestaurante');
 $routes->add('Restaurante-logout', 'LoginRestauranteController::logoutRestaurante');
-
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

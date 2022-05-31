@@ -27,6 +27,13 @@ class DisponibilidadHoraModel extends Model
     }
 
     public function todos($disponibilidad_id){
-        return $this->where('hora_id',$disponibilidad_id)->orderBy('hora', 'DESC')->findAll(); 
+        return $this->where('disponibilidad_id',$disponibilidad_id)->orderBy('hora', 'DESC')->findAll(); 
+    }
+    public function soloConA(){
+        $b = $this->builder();
+        $b->like('hora','A'); // esto es concierto_nombre like '%A%'
+        $b->orderBy('hora', 'ASC');
+        $consulta = $b->get();
+        return $consulta->getCustomResultObject('App\Entities\DisponibilidadHoraEntity');
     }
 }
