@@ -6,6 +6,10 @@ use CodeIgniter\Controller;
 //
 use App\Models\MesaModel;
 use App\Entities\MesaEntity;
+use App\Models\DisponibilidadMesaModel;
+use App\Entities\DisponibilidadMesaEntity;
+use App\Models\DisponibilidadHoraModel;
+use App\Entities\DisponibilidadHoraEntity;
 
 class MesaRestauranteController extends Controller
 {
@@ -98,5 +102,93 @@ class MesaRestauranteController extends Controller
      public function cancelar(){
         return $this->lista();
      }
-    
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+     public function agregarDias($unId){
+        $data['mesa_id'] = $unId;
+        return view('MesaRestaurante/agregarDias',$data);
+
+    } 
+    public function listaDias($unId){
+        session_start();
+        $mod = new DisponibilidadMesaModel();
+        // Buscamos las mesas
+        $mesas = $mod->todos($unId);
+        $data['mesa_id'] = $unId;
+        // o todEs (?)
+        // UN EJEMPLO PARA MAS  ADELANTE
+        //$mesa = $mod->soloConA();
+        
+        // Ponemos en la 'data transiente' la data que queremos mostrar
+        $data['registros'] = $mesas;
+        return view('MesaRestaurante/listaDias', $data);
+    }
+
+    private function recuperaDias($unId){
+        // Obtenemos la clase del Model que controla las mesas
+        $mod = new DisponibilidadMesaModel();
+        // Buscamos las mesas por la PK
+        $mesas = $mod->find($unId);
+        // Dejamos las mesas la 'data transiente'
+        $laData['mesa'] = $mesas;
+        return $laData;
+    }
+    public function diasBaseDatos(){
+        // Mandar los datos a la BD
+        $unMesa = new DisponibilidadMesaEntity();
+        $unMesa->dia_reserva=  $this->request->getVar('dia_reserva');
+        $unMesa->mesa_id=  $this->request->getVar('mesa_id');
+        //
+        $mod = new DisponibilidadMesaModel();
+        //
+        $mod->save($unMesa);
+        //Mostrar la lista de mesa
+
+        return $this->listaDias($unMesa->mesa_id);
+        //return $this->index();
+    }
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    public function agregarHoras($unId){
+        $data['disponibilidad_id'] = $unId;
+        return view('MesaRestaurante/agregarHoras',$data);
+
+    } 
+    public function listaHoras($unId){
+        session_start();
+        $mod = new DisponibilidadHoraModel();
+        // Buscamos las mesas
+        $mesas = $mod->todos($unId);
+        $data['disponibilidad_id'] = $unId;
+        // o todEs (?)
+        // UN EJEMPLO PARA MAS  ADELANTE
+        //$mesa = $mod->soloConA();
+        
+        // Ponemos en la 'data transiente' la data que queremos mostrar
+        $data['registros'] = $mesas;
+        return view('MesaRestaurante/listaHoras', $data);
+    }
+
+    private function recuperaHoras($unId){
+        // Obtenemos la clase del Model que controla las mesas
+        $mod = new DisponibilidadHoraModel();
+        // Buscamos las mesas por la PK
+        $mesas = $mod->find($unId);
+        // Dejamos las mesas la 'data transiente'
+        $laData['mesa'] = $mesas;
+        return $laData;
+    }
+    public function horasBaseDatos(){
+        // Mandar los datos a la BD
+        $unMesa = new DisponibilidadHoraEntity();
+        $unMesa->hora=  $this->request->getVar('hora');
+        $unMesa->disponibilidad_id=  $this->request->getVar('disponibilidad_id');
+        //
+        $mod = new DisponibilidadHoraModel();
+        //
+        $mod->save($unMesa);
+        //Mostrar la lista de mesa
+
+        return $this->listaHoras($unMesa->disponibilidad_id);
+        //return $this->index();
+    }
 }

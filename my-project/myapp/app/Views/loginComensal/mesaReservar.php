@@ -5,25 +5,24 @@
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>
-             <th>Encuentra tu Restaurante Preferido</th>
+             <th>Selecciona tu mesa</th>
           </tr>
        </thead>
        <tbody>
          <ul>
 		   <?php
           foreach ($registros as $registro){
-            $restaurante = $registro['restaurante'];
-            $menus = $registro['menu'];
+            $mesa = $registro['mesa'];
+            $dia = $registro['dia'];
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/xxxxxxx/')?>">Reserva aqui</a></li><br/> 
-            Menu:
+            Mesas: <?= $mesa->dia_reserva?> <li> <a href="<?php echo site_url('/xxxxxxx/')?>">Seleccionar</a></li><br/> 
+            Dias:
             <?php
-            if ($menus) {}
-              foreach ($menus as $plato) {
+            if ($dia) {}
+              foreach ($dia as $diaR) {
                 ?>
-                  <li><?= $plato->nombre ?>
-                  <ul><li><?= $plato->descripcion ?></li></ul>
-                  <ul><li><?= $plato->precio ?></li></ul>
+                  <li><?= $diaR->dia_reserva?>
+
                   </li>
                 <?php
               }

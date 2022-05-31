@@ -45,6 +45,7 @@
              <td>
               <a href="<?php echo site_url('/mesaRestaurante-editarFormulario/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
               <a href="<?php echo site_url('/mesaRestaurante-eliminarFormulario/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-listaDias/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Dias</a>
               </td>
       
           </tr>

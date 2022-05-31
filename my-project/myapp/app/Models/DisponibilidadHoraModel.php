@@ -2,7 +2,7 @@
 namespace App\Models;
 use CodeIgniter\Model;
 use App\Entities\DisponibilidadHoraEntity;
-class DisponibilidadHoraEntity extends Model
+class DisponibilidadHoraModel extends Model
 {
     protected $table = 'DisponibilidadHora';
     protected $primaryKey = 'hora_id';

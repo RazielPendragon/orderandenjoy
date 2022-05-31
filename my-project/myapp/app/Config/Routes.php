@@ -84,6 +84,19 @@ $routes->post('mesaRestaurante-eliminarBaseDatos', 'MesaRestauranteController::e
 //
 $routes->add('mesaRestaurante-cancelar', 'MesaRestauranteController::cancelar');
 $routes->add('reservas-volver', 'LoginRestauranteController::volver');
+///// MESAS PARA SER RESERVADAS
+
+$routes->add('mesaRestaurante-listaDias/(:num)','MesaRestauranteController::listaDias/$1');
+$routes->add('mesaRestaurante-agregarDias/(:num)','MesaRestauranteController::agregarDias/$1');
+$routes->post('mesaRestaurante-diasBaseDatos-continuar', 'MesaRestauranteController::diasBaseDatos');
+
+$routes->add('mesaRestaurante-listaHoras/(:num)','MesaRestauranteController::listaHoras/$1');
+$routes->add('mesaRestaurante-agregarHoras/(:num)','MesaRestauranteController::agregarHoras/$1');
+$routes->post('mesaRestaurante-horasBaseDatos-continuar', 'MesaRestauranteController::horasBaseDatos');
+
+/////////////RUTAS PARA RESERVAR
+$routes->add('mesaRestaurante-reservar', 'MesaRestauranteController::mesaReservar');
+
 
 /*
  * --------------------------------------------------------------------

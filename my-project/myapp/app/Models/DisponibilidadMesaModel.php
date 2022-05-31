@@ -2,7 +2,7 @@
 namespace App\Models;
 use CodeIgniter\Model;
 use App\Entities\DisponibilidadMesaEntity;
-class DisponibilidadMesaEntity extends Model
+class DisponibilidadMesaModel extends Model
 {
     protected $table = 'DisponibilidadMesa';
     protected $primaryKey = 'disponibilidad_id';
@@ -26,8 +26,8 @@ class DisponibilidadMesaEntity extends Model
         $this->update($unMesaDisponible->disponibilidad_id,$parametros);
     }
 
-    public function todos($disponibilidad_id){
-        return $this->where('disponibilidad_id',$disponibilidad_id)->orderBy('dia_reserva', 'DESC')->findAll(); 
+    public function todos($mesa_id){
+        return $this->where('mesa_id',$mesa_id)->orderBy('dia_reserva', 'DESC')->findAll(); 
     }
     public function soloConA(){
         $b = $this->builder();
