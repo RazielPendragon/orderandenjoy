@@ -7,8 +7,8 @@
     ?>
     <h1>Restaurantes</h1>
     <ul>
-        <li> <a href="<?php echo site_url('/menu-lista/')?>">Ver Menu</a></li>
-        <li><a href="<?php echo site_url('/mesaRestaurante-lista/')?>">Ver Reservas</a></li>
+        <li> <a href="<?php echo site_url('/menu-lista/')?>">Crear Menu</a></li>
+        <li><a href="<?php echo site_url('/mesaRestaurante-lista/')?>">Crear Mesa</a></li>
  
  
  
