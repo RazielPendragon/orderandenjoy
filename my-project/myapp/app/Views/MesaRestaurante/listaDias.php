@@ -33,7 +33,7 @@
              <td>
               <a href="<?php echo site_url('/xxxxxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
               <a href="<?php echo site_url('/xxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>
-              <a href="<?php echo site_url('/mesaRestaurante-listaHoras/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Horas</a>
+              <a href="<?php echo site_url('/mesaRestaurante-listaHoras/'.$reg->disponibilidad_id);?>" class="btn btn-danger btn-sm">Horas</a>
               </td>
       
           </tr>
