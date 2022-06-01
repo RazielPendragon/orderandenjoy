@@ -1,3 +1,6 @@
+
+
+
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
 <?= $this->section('contenido') ?>
