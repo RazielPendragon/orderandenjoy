@@ -12,7 +12,7 @@
       <div class="form-group">
       <input type ="hidden" name= "disponibilidad_id" value= "<?= $disponibilidad_id?>"> 
       <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
-      <a href="<?php echo site_url('/mesaRestaurante-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
+      <a href="<?php echo site_url('/mesaRestaurante-cancelarHoras/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
     <!-- ARREGLAR BOTON CANCELAR -->
       </div>
     </form>

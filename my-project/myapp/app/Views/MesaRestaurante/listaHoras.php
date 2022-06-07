@@ -3,7 +3,7 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/reservas-volver/') ?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/mesaRestaurante-lista/') ?>" class="btn btn-success mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/mesaRestaurante-agregarHoras/'.$disponibilidad_id) ?>" class="btn btn-success mb-2">Agregar Horas</a>
@@ -28,8 +28,8 @@
              <td><?php echo $reg->hora_id; ?></td>
              <td><?php echo $reg->hora; ?></td>
              <td>
-              <a href="<?php echo site_url('/xxxxxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/xxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-editarHoras/'.$reg->hora_id);?>" class="btn btn-primary btn-sm">Editar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-eliminarHoras/'.$reg->hora_id);?>" class="btn btn-danger btn-sm">Borrar</a>
               </td>
       
           </tr>
