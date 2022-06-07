@@ -6,7 +6,7 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/reservas-volver/') ?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/mesaRestaurante-lista/') ?>" class="btn btn-success mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/mesaRestaurante-agregarDias/'.$mesa_id) ?>" class="btn btn-success mb-2">Agregar Dias</a>
@@ -31,8 +31,8 @@
              <td><?php echo $reg->disponibilidad_id; ?></td>
              <td><?php echo $reg->dia_reserva; ?></td>
              <td>
-              <a href="<?php echo site_url('/xxxxxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/xxxxxxxxxx/'.$reg->mesa_id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-editarDias/'.$reg->disponibilidad_id);?>" class="btn btn-primary btn-sm">Editar</a>
+              <a href="<?php echo site_url('/mesaRestaurante-eliminarDias/'.$reg->disponibilidad_id);?>" class="btn btn-danger btn-sm">Borrar</a>
               <a href="<?php echo site_url('/mesaRestaurante-listaHoras/'.$reg->disponibilidad_id);?>" class="btn btn-danger btn-sm">Horas</a>
               </td>
       

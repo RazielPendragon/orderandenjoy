@@ -93,15 +93,15 @@ class MesaRestauranteController extends Controller
          $unMesa->mesa = $this->request->getVar('id');
          // Obtenemos la clase del Model que controla los conciertos
          $mod = new MesaModel();
-         // Mandamos la Transacciòn ala Base de DAtos
+         // Mandamos la Transacciòn a(la Base de DAtos
          $mod->eliminar($unMesa);   
          //Home
          return $this->lista();
      }
     
-     public function cancelar(){
+    public function cancelar(){
         return $this->lista();
-     }
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
      public function agregarDias($unId){
         $data['mesa_id'] = $unId;
@@ -146,6 +146,45 @@ class MesaRestauranteController extends Controller
         return $this->listaDias($unMesa->mesa_id);
         //return $this->index();
     }
+    public function eliminarDias($id){
+        $data = $this->recuperaDias($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/eliminarDias',$data);
+    }
+    
+    public function eliminarDiasBaseDatos(){
+         // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+         $unMesa= new DisponibilidadMesaEntity();
+         $unMesa->disponibilidad_id = $this->request->getVar('dia_id');
+         // Obtenemos la clase del Model que controla los conciertos
+         $mod = new DisponibilidadMesaModel();
+         // Mandamos la Transacciòn ala Base de DAtos
+         $mod->eliminar($unMesa);   
+         //Home
+         return $this->listaDias($this->request->getVar('id'));
+    }
+    public function cancelarDias(){
+        return $this->listaDias(null);
+    }
+    public function editarDias($id){
+        $data = $this->recuperaDias($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/editarDias',$data);
+    }
+//en la lista habra opcion de editar capacidad
+    public function editarDiasBaseDatos(){
+    // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+    $unMesa = new DisponibilidadMesaEntity();
+    $unMesa->disponibilidad_id= $this->request->getVar('disponibilidad_id');
+    $unMesa->dia_reserva =  $this->request->getVar('dia_reserva');
+    $unMesa->mesa_id =  $this->request->getVar('mesa_id');
+    // Obtenemos la clase del Model que controla los conciertos
+    $mod = new DisponibilidadMesaModel();
+    // Mandamos la Transacciòn ala Base de DAtos
+    $mod->actualizar($unMesa);
+    // vuelve al inicio
+        return $this->listaDias(null);
+    } 
     ////////////////////////////////////////////////////////////////////////////////////
 
     public function agregarHoras($unId){
@@ -191,4 +230,43 @@ class MesaRestauranteController extends Controller
         return $this->listaHoras($unMesa->disponibilidad_id);
         //return $this->index();
     }
+    public function eliminarHoras($id){
+        $data = $this->recuperaHoras($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/eliminarHoras',$data);
+    }
+    
+    public function eliminarHorasBaseDatos(){
+         // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+         $unMesa= new DisponibilidadHoraEntity();
+         $unMesa-> hora_id = $this->request->getVar('id');
+         // Obtenemos la clase del Model que controla los conciertos
+         $mod = new DisponibilidadHoraModel();
+         // Mandamos la Transacciòn ala Base de DAtos
+         $mod->eliminar($unMesa);   
+         //Home
+         return $this->listaHoras($this->request->getVar('dia_id'));
+    }
+    public function cancelarHoras(){
+        return $this->listaHoras(null);
+    }
+    public function editarHoras($id){
+        $data = $this->recuperaHoras($id);
+        //Vamos a la vista
+        return view('MesaRestaurante/editarHoras',$data);
+    }
+//en la lista habra opcion de editar capacidad
+    public function editarHorasBaseDatos(){
+    // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+    $unMesa = new DisponibilidadHoraEntity();
+    $unMesa->hora_id= $this->request->getVar('hora_id');
+    $unMesa->hora =  $this->request->getVar('hora');
+    $unMesa->disponibilidad_id =  $this->request->getVar('disponibilidad_id');
+    // Obtenemos la clase del Model que controla los conciertos
+    $mod = new DisponibilidadHoraModel();
+    // Mandamos la Transacciòn ala Base de DAtos
+    $mod->actualizar($unMesa);
+    // vuelve al inicio
+        return $this->listaHoras(null);
+    } 
 }
