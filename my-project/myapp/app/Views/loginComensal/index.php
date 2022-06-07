@@ -2,6 +2,7 @@
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
 <div class="mt-3">
+  <?php var_dump($registros);?>
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>
