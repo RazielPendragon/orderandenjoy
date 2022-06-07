@@ -26,7 +26,7 @@ class DisponibilidadMesaModel extends Model
         $this->update($unMesaDisponible->disponibilidad_id,$parametros);
     }
 
-    public function todos($mesa_id){
+    public function todEs($mesa_id){
         return $this->where('mesa_id',$mesa_id)->orderBy('dia_reserva', 'DESC')->findAll(); 
     }
     public function soloConA(){

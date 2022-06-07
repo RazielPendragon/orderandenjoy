@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Models\RegistroComensalModel;
 use App\Models\UsuarioComensalModel;
 use App\Models\MenuModel;
 use App\Models\MesaModel;
+use App\Models\DisponibilidadHoraModel;
 use App\Models\DisponibilidadMesaModel;
 use App\Models\UsuarioRestauranteModel;
 class LoginComensal extends BaseController
@@ -26,21 +26,22 @@ class LoginComensal extends BaseController
         return view('loginComensal/index',$data);
     
     }
-    public function mesaReservar(){
+    public function mesaReservar($id_restaurante){
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $mod = new MesaModel(); //mod es la variable a modelo
-        $mod2 = new DisponibilidadMesaModel(); //mod2 es igual al modelo 2
-        // Buscamos los restaurantes con la funcion todos
-        $mesa = $mod->todos();
-        // abrimos un foreach donde decimos que
-        foreach ($mesa as $r){ //restaurantes es igual a la variable r
-            $dia = $mod2->todEs ($r->disponibilidad_id); // Busca los platos del restaiurante r
-            $dataMesa['mesa'] = $r; // luego guardamos los datos del restauirante en un mapa
-            $dataMesa['dia'] = $mesas; // y aqui guardamos los menus en el mismo mapa
-            $data['registros'][] = $dataMesa; //y aqui lo agregamos al resulatdo
-        } 
+        $modDias = new DisponibilidadMesaModel(); //modelo de los Días
+        $modHora = new DisponibilidadHoraModel(); //modelo de las Horas
+        $modMesa = new  MesaModel(); //Modelo de las mesas
+        $mesas = $modMesa -> todos ($id);
+        foreach ($mesas as $m){
+            $mesa = $mod-> todEs ($m -> restaurante);
+            foreach ($mesa as $r){ 
+                $dia = $mod2-> todEs ($r -> disponibilidad_id); 
+                $dataMesa['mesa'] = $r; 
+                $dataMesa['dia'] = $dia; 
+                $data['registros'][] = $dataMesa; 
+            }
+        }
         return view('loginComensal/mesaReservar',$data);
-    
     }
     public function login01Formulario()
     {

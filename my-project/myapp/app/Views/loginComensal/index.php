@@ -9,27 +9,29 @@
           </tr>
        </thead>
        <tbody>
-         <ul>
+         
 		   <?php
           foreach ($registros as $registro){
             $restaurante = $registro['restaurante'];
             $menus = $registro['menu'];
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-reservar/')?>">Reserva aqui</a></li><br/> 
+            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-reservar/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
             Menu:
             <?php
-            if ($menus) {}
+            if ($menus) {
               foreach ($menus as $plato) {
                 ?>
                   <li><?= $plato->nombre ?>
-                  <ul><li><?= $plato->descripcion ?></li></ul>
-                  <ul><li><?= $plato->precio ?></li></ul>
+                  <ul>
+                      <li><?= $plato->descripcion ?></li>
+                      <li><?= $plato->precio ?></li>
+                  </ul>
                   </li>
                 <?php
               }
             }
+          }
 		   ?>
-       </ul>
        </tbody>
      </table>
   </div>

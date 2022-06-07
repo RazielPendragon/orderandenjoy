@@ -11,6 +11,7 @@
        <tbody>
          <ul>
 		   <?php
+          if (isset(($registros)){
           foreach ($registros as $registro){
             $mesa = $registro['mesa'];
             $dia = $registro['dia'];
@@ -18,15 +19,17 @@
             Mesas: <?= $mesa->dia_reserva?> <li> <a href="<?php echo site_url('/xxxxxxx/')?>">Seleccionar</a></li><br/> 
             Dias:
             <?php
-            if ($dia) {}
+            if ($dia) {
               foreach ($dia as $diaR) {
                 ?>
-                  <li><?= $diaR->dia_reserva?>
+                  <li><?= $diaR->hora?>
 
                   </li>
                 <?php
               }
             }
+          }
+        }
 		   ?>
        </ul>
        </tbody>
