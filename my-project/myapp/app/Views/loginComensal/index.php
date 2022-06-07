@@ -2,7 +2,6 @@
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
 <div class="mt-3">
-  <?php var_dump($registros);?>
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>
@@ -16,7 +15,7 @@
             $restaurante = $registro['restaurante'];
             $menus = $registro['menu'];
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-reservar/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
+            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-reservarVer/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
             Menu:
             <?php
             if ($menus) {

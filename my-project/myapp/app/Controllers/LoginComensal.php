@@ -31,11 +31,11 @@ class LoginComensal extends BaseController
         $modDias = new DisponibilidadMesaModel(); //modelo de los Días
         $modHora = new DisponibilidadHoraModel(); //modelo de las Horas
         $modMesa = new  MesaModel(); //Modelo de las mesas
-        $mesas = $modMesa -> todos ($id);
+        $mesas = $modMesa -> todos ($id_restaurante);
         foreach ($mesas as $m){
-            $mesa = $mod-> todEs ($m -> restaurante);
+            $mesa = $modDias-> todEs ($m -> mesa);
             foreach ($mesa as $r){ 
-                $dia = $mod2-> todEs ($r -> disponibilidad_id); 
+                $dia = $modHora-> todos ($r -> disponibilidad_id); 
                 $dataMesa['mesa'] = $r; 
                 $dataMesa['dia'] = $dia; 
                 $data['registros'][] = $dataMesa; 

@@ -11,7 +11,7 @@
        <tbody>
          <ul>
 		   <?php
-          if (isset(($registros)){
+          if (isset($registros)){
           foreach ($registros as $registro){
             $mesa = $registro['mesa'];
             $dia = $registro['dia'];
