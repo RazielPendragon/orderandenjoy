@@ -3,13 +3,8 @@
 <?= $this->section('contenido') ?>
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
-       <thead>
-          <tr>
-             <th>Encuentra tu Restaurante Preferido</th>
-          </tr>
-       </thead>
        <tbody>
-         
+       <h1>Encuentra tu Restaurante Preferido</h1>
 		   <?php
           foreach ($registros as $registro){
             $restaurante = $registro['restaurante'];

@@ -3,11 +3,7 @@
 <?= $this->section('contenido') ?>
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
-       <thead>
-          <tr>
-             <th>Selecciona tu mesa</th>
-          </tr>
-       </thead>
+       <h1> Elige tu horario</h1>
        <tbody>
          <ul>
 		   <?php
