@@ -106,7 +106,7 @@ $routes->add('mesaRestaurante-editarHorasBaseDatos','MesaRestauranteController::
 
 
 /////////////RUTAS PARA RESERVAR
-$routes->add('mesaRestaurante-reservarVer/(:num)', 'MesaRestauranteController::mesaReservar/$1');
+$routes->add('mesaRestaurante-reservarVer/(:num)', 'LoginComensal::mesaReservar/$1');
 
 
 /*
