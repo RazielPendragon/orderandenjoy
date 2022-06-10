@@ -10,7 +10,7 @@
           if (($registros)){
           foreach ($registros as $registro){
             ?>
-            <li><a href="<?php echo site_url('/mesaRestaurante-menuVer/')?>">Hora <?= $registro->hora ?></a> </li>
+            <li><a href="<?php echo site_url('/mesaRestaurante-menuVer/'.$registro -> hora_id)?>">Hora <?= $registro->hora ?></a> </li>
             <?php
           }
         } 

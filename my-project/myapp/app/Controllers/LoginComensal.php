@@ -64,8 +64,8 @@ class LoginComensal extends BaseController
         session_start();
         $modeloHoras = new DisponibilidadHoraModel();
         $unaHora = $modeloHoras ->find($hora_id);
-        $_SESSION['hora'] = $unDia;
-        $id_restaurante = $_SESSION ['restaurante'];
+        $_SESSION['hora'] = $unaHora;
+        $id_restaurante = $_SESSION ['restaurante'] -> id_restaurante;
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloMenu = new MenuModel(); //modelo de los Días
         $menus = $modeloMenu -> todEs ($id_restaurante);
