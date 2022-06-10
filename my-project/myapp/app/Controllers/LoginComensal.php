@@ -26,23 +26,31 @@ class LoginComensal extends BaseController
         return view('loginComensal/index',$data);
     
     }
-    public function mesaReservar($id_restaurante){
+    
+
+    public function mesaVer($id_restaurante){
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modDias = new DisponibilidadMesaModel(); //modelo de los Días
-        $modHora = new DisponibilidadHoraModel(); //modelo de las Horas
-        $modMesa = new  MesaModel(); //Modelo de las mesas
-        $mesas = $modMesa -> todos ($id_restaurante);
-        foreach ($mesas as $m){
-            $mesa = $modDias-> todEs ($m -> mesa);
-            foreach ($mesa as $r){ 
-                $dia = $modHora-> todos ($r -> disponibilidad_id); 
-                $dataMesa['mesa'] = $r; 
-                $dataMesa['dia'] = $dia; 
-                $data['registros'][] = $dataMesa; 
-            }
-        }
-        return view('loginComensal/mesaReservar',$data);
+        $modeloMesa = new MesaModel(); //modelo de los Días
+        $mesas = $modeloMesa -> todos ($id_restaurante);
+        $data ['registros'] = $mesas;
+        return view('loginComensal/mesaVer',$data);
     }
+    public function diasVer($mesa){
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloDias = new DisponibilidadMesaModel(); //modelo de los Días
+        $dias = $modeloDias -> todEs ($mesa);
+        $data ['registros'] = $dias;
+        return view('loginComensal/diasVer',$data);
+    }
+    public function horasVer($disponibilidad_id){
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloHoras = new DisponibilidadHoraModel(); //modelo de los Días
+        $horas = $modeloHoras -> todos ($disponibilidad_id);
+        $data ['registros'] = $horas;
+        return view('loginComensal/horasVer',$data);
+    }
+
+
     public function login01Formulario()
     {
         // Como Debe funcionar

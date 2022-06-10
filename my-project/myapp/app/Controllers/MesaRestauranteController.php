@@ -112,7 +112,7 @@ class MesaRestauranteController extends Controller
         session_start();
         $mod = new DisponibilidadMesaModel();
         // Buscamos las mesas
-        $mesas = $mod->todos($unId);
+        $mesas = $mod->todEs($unId);
         $data['mesa_id'] = $unId;
         // o todEs (?)
         // UN EJEMPLO PARA MAS  ADELANTE
