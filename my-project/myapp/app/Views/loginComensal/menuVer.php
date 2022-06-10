@@ -10,12 +10,12 @@
           if (($registros)){
           foreach ($registros as $registro){
             ?>
-            <li><a href="<?php echo site_url('/mesaRestaurante-menuVer/')?>">Hora <?= $registro->hora ?></a> </li>
+            <li><a href="<?php echo site_url('/xxxxxxx/')?>">Menu <?= $registro->menu_id ?></a> </li>
             <?php
           }
         } 
         else
-            echo 'no hay horas disponibles para ese dia'
+            echo 'no hay menus disponibles para ese dia'
 		   ?>
        </ul>
        </tbody>

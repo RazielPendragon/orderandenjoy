@@ -26,9 +26,10 @@ class LoginComensal extends BaseController
         return view('loginComensal/index',$data);
     
     }
-    
 
     public function mesaVer($id_restaurante){
+        session_start();
+        $_SESSION['restaurante'] = $id_restaurante;
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloMesa = new MesaModel(); //modelo de los Días
         $mesas = $modeloMesa -> todos ($id_restaurante);
@@ -50,7 +51,15 @@ class LoginComensal extends BaseController
         return view('loginComensal/horasVer',$data);
     }
 
-
+    public function menuVer($hora_id){
+        session_start();
+        $id_restaurante = $_SESSION ['restaurante'];
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloMenu = new MenuModel(); //modelo de los Días
+        $horas = $modeloHoras -> todEs ($hora_id);
+        $data ['registros'] = $menus;
+        return view('loginComensal/menuVer',$data);
+    }
     public function login01Formulario()
     {
         // Como Debe funcionar
