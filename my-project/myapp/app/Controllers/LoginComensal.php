@@ -13,23 +13,21 @@ class LoginComensal extends BaseController
     public function index(){
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $mod = new UsuarioRestauranteModel(); //mod es la variable a modelo
-        $mod2 = new MenuModel(); //mod2 es igual al modelo 2
+       
         // Buscamos los restaurantes con la funcion todos
         $restaurantes = $mod->todos();
         // abrimos un foreach donde decimos que
-        foreach ($restaurantes as $r){ //restaurantes es igual a la variable r
-            $menus = $mod2->todEs ($r->id_restaurante); // Busca los platos del restaiurante r
-            $dataRestaurante['restaurante'] = $r; // luego guardamos los datos del restauirante en un mapa
-            $dataRestaurante['menu'] = $menus; // y aqui guardamos los menus en el mismo mapa
-            $data['registros'][] = $dataRestaurante; //y aqui lo agregamos al resulatdo
-        } 
+        $data ['registros'] = $restaurantes;
         return view('loginComensal/index',$data);
     
     }
 
     public function mesaVer($id_restaurante){
+        //guardamos seleccion de restaurante 
         session_start();
-        $_SESSION['restaurante'] = $id_restaurante;
+        $modeloRestaurante = new UsuarioRestauranteModel();
+        $unRestaurante = $modeloRestaurante ->find($id_restaurante);
+        $_SESSION['restaurante'] = $unRestaurante;
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloMesa = new MesaModel(); //modelo de los Días
         $mesas = $modeloMesa -> todos ($id_restaurante);
@@ -37,6 +35,11 @@ class LoginComensal extends BaseController
         return view('loginComensal/mesaVer',$data);
     }
     public function diasVer($mesa){
+        //guardamos seleccion de mesa
+        session_start();
+        $modeloMesa = new MesaModel();
+        $unaMesa = $modeloMesa ->find($mesa);
+        $_SESSION['mesa'] = $unaMesa;
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloDias = new DisponibilidadMesaModel(); //modelo de los Días
         $dias = $modeloDias -> todEs ($mesa);
@@ -44,6 +47,11 @@ class LoginComensal extends BaseController
         return view('loginComensal/diasVer',$data);
     }
     public function horasVer($disponibilidad_id){
+        //guardamos seleccion de dias 
+        session_start();
+        $modeloDias = new DisponibilidadMesaModel();
+        $unDia = $modeloDias ->find($disponibilidad_id);
+        $_SESSION['dia'] = $unDia;
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloHoras = new DisponibilidadHoraModel(); //modelo de los Días
         $horas = $modeloHoras -> todos ($disponibilidad_id);
@@ -52,14 +60,19 @@ class LoginComensal extends BaseController
     }
 
     public function menuVer($hora_id){
+        //guardamos seleccion de dias
         session_start();
+        $modeloHoras = new DisponibilidadHoraModel();
+        $unaHora = $modeloHoras ->find($hora_id);
+        $_SESSION['hora'] = $unDia;
         $id_restaurante = $_SESSION ['restaurante'];
         // Obtenemos la clase del Model que controla los Restaurantes Y los menus
         $modeloMenu = new MenuModel(); //modelo de los Días
-        $horas = $modeloHoras -> todEs ($hora_id);
+        $menus = $modeloMenu -> todEs ($id_restaurante);
         $data ['registros'] = $menus;
         return view('loginComensal/menuVer',$data);
     }
+
     public function login01Formulario()
     {
         // Como Debe funcionar
