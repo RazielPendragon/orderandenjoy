@@ -8,6 +8,11 @@ use App\Models\MesaModel;
 use App\Models\DisponibilidadHoraModel;
 use App\Models\DisponibilidadMesaModel;
 use App\Models\UsuarioRestauranteModel;
+use App\Models\ReservaMesaModel;
+use App\Models\ReservaMenuModel;
+use App\Entities\ReservaMesaEntity;
+use App\Entities\ReservaMenuEntity;
+
 class LoginComensal extends BaseController
 {
     public function index(){
@@ -20,57 +25,6 @@ class LoginComensal extends BaseController
         $data ['registros'] = $restaurantes;
         return view('loginComensal/index',$data);
     
-    }
-
-    public function mesaVer($id_restaurante){
-        //guardamos seleccion de restaurante 
-        session_start();
-        $modeloRestaurante = new UsuarioRestauranteModel();
-        $unRestaurante = $modeloRestaurante ->find($id_restaurante);
-        $_SESSION['restaurante'] = $unRestaurante;
-        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modeloMesa = new MesaModel(); //modelo de los Días
-        $mesas = $modeloMesa -> todos ($id_restaurante);
-        $data ['registros'] = $mesas;
-        return view('loginComensal/mesaVer',$data);
-    }
-    public function diasVer($mesa){
-        //guardamos seleccion de mesa
-        session_start();
-        $modeloMesa = new MesaModel();
-        $unaMesa = $modeloMesa ->find($mesa);
-        $_SESSION['mesa'] = $unaMesa;
-        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modeloDias = new DisponibilidadMesaModel(); //modelo de los Días
-        $dias = $modeloDias -> todEs ($mesa);
-        $data ['registros'] = $dias;
-        return view('loginComensal/diasVer',$data);
-    }
-    public function horasVer($disponibilidad_id){
-        //guardamos seleccion de dias 
-        session_start();
-        $modeloDias = new DisponibilidadMesaModel();
-        $unDia = $modeloDias ->find($disponibilidad_id);
-        $_SESSION['dia'] = $unDia;
-        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modeloHoras = new DisponibilidadHoraModel(); //modelo de los Días
-        $horas = $modeloHoras -> todos ($disponibilidad_id);
-        $data ['registros'] = $horas;
-        return view('loginComensal/horasVer',$data);
-    }
-
-    public function menuVer($hora_id){
-        //guardamos seleccion de dias
-        session_start();
-        $modeloHoras = new DisponibilidadHoraModel();
-        $unaHora = $modeloHoras ->find($hora_id);
-        $_SESSION['hora'] = $unaHora;
-        $id_restaurante = $_SESSION ['restaurante'] -> id_restaurante;
-        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modeloMenu = new MenuModel(); //modelo de los Días
-        $menus = $modeloMenu -> todEs ($id_restaurante);
-        $data ['registros'] = $menus;
-        return view('loginComensal/menuVer',$data);
     }
 
     public function login01Formulario()
@@ -133,5 +87,94 @@ class LoginComensal extends BaseController
         //Pal Home
         return view('welcome_message');
     }
+
+    public function mesaVer($id_restaurante){
+        //guardamos seleccion de restaurante 
+        session_start();
+        $modeloRestaurante = new UsuarioRestauranteModel();
+        $unRestaurante = $modeloRestaurante ->find($id_restaurante);
+        $_SESSION['restaurante'] = $unRestaurante;
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloMesa = new MesaModel(); //modelo de los Días
+        $mesas = $modeloMesa -> todos ($id_restaurante);
+        $data ['registros'] = $mesas;
+        return view('loginComensal/mesaVer',$data);
+    }
+    public function diasVer($mesa){
+        //guardamos seleccion de mesa
+        session_start();
+        $modeloMesa = new MesaModel();
+        $unaMesa = $modeloMesa ->find($mesa);
+        $_SESSION['mesa'] = $unaMesa;
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloDias = new DisponibilidadMesaModel(); //modelo de los Días
+        $dias = $modeloDias -> todEs ($mesa);
+        $data ['registros'] = $dias;
+        return view('loginComensal/diasVer',$data);
+    }
+    public function horasVer($disponibilidad_id){
+        //guardamos seleccion de dias 
+        session_start();
+        $modeloDias = new DisponibilidadMesaModel();
+        $unDia = $modeloDias ->find($disponibilidad_id);
+        $_SESSION['dia'] = $unDia;
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloHoras = new DisponibilidadHoraModel(); //modelo de los Días
+        $horas = $modeloHoras -> todos ($disponibilidad_id);
+        $data ['registros'] = $horas;
+        return view('loginComensal/horasVer',$data);
+    }
+
+    public function menuVer($hora_id){
+        //guardamos seleccion de dias
+        session_start();
+        $modeloHoras = new DisponibilidadHoraModel();
+        $unaHora = $modeloHoras ->find($hora_id);
+        $_SESSION['hora'] = $unaHora;
+        $id_restaurante = $_SESSION ['restaurante'] -> id_restaurante;
+        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
+        $modeloMenu = new MenuModel(); //modelo de los Días
+        $menus = $modeloMenu -> todEs ($id_restaurante);
+        $data ['registros'] = $menus;
+        return view('loginComensal/menuVer',$data);
+    }
+
+    public function agregarReserva(){
+      
+        // Recuperamos los datos desde el formulario (porque se enviaron por un POST y Request)
+        $unaReserva = new ReservaMesaEntity();
+        $unaReserva->cantidad_personas =  $this->request->getVar('cantidad');
+        $unaReserva->comensal_id =  $this->request->getVar('ComensalId');
+        $unaReserva->hora_id =  $this->request->getVar('HoraId');
+        // Obtenemos la clase del Model que controla los conciertos
+        $mod = new ReservaMesaModel();
+        // MAndamos la Transacciòn ala Base de DAtos
+        $reserva_id=$mod->insert($unaReserva);
+        // reserva menu
+        $menu=  $this->request->getVar('menu');
+
+        foreach($menu as $menu_id => $menu_cantidad) {
+            if ($menu_cantidad >0) {
+            $unMenuReserva = new ReservaMenuEntity();
+            $unMenuReserva->menu_id = $menu_id ;
+            $unMenuReserva->reserva_id = $reserva_id;
+            $unMenuReserva->menu_cantidad = $menu_cantidad;
+            // Obtenemos la clase del Model
+            $mod = new ReservaMenuModel();
+            $mod->save($unMenuReserva);
+        }
+
+        }
+        $modeloHoras = new DisponibilidadHoraModel();
+        $unaHora = $modeloHoras ->find($this->request->getVar('HoraId'));
+        $unaHora -> reservada= "1";
+        var_dump ($unaHora);
+        $modeloHoras -> actualizar ($unaHora);
+
+        return view('loginComensal/reservaLista');
+       
+    }
+
+
 
 }

@@ -7,7 +7,7 @@ class DisponibilidadHoraModel extends Model
     protected $table = 'DisponibilidadHora';
     protected $primaryKey = 'hora_id';
     
-    protected $allowedFields = ['hora_id', 'hora', 'disponibilidad_id'];
+    protected $allowedFields = ['hora_id', 'hora', 'disponibilidad_id', 'reservada'];
 
     // Tipo de dato a devolver
     protected $returnType = 'App\Entities\DisponibilidadHoraEntity';
@@ -16,10 +16,11 @@ class DisponibilidadHoraModel extends Model
         $this->delete($unHoraDisponible->hora_id);
     }
 
-    public function actualizar (DisponibilidadHoraEntity $unMesaDisponible){
+    public function actualizar (DisponibilidadHoraEntity $unHoraDisponible){
         $parametros = [
             'hora' => $unHoraDisponible->dia_reserva,
             'disponibilidad_id' => $unHoraDisponible->mesa_id,
+            'reservada' => $unHoraDisponible->reservada,
         ]
         ;
 
@@ -27,7 +28,8 @@ class DisponibilidadHoraModel extends Model
     }
 
     public function todos($disponibilidad_id){
-        return $this->where('disponibilidad_id',$disponibilidad_id)->orderBy('hora', 'DESC')->findAll(); 
+        return $this->where('disponibilidad_id',$disponibilidad_id)->where('reservada',0)->orderBy('hora', 'DESC')->findAll(); 
+
     }
     public function soloConA(){
         $b = $this->builder();

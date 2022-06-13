@@ -3,9 +3,9 @@
 <?= $this->section('contenido') ?>
 
   <div class="container mt-5">
-  <h1 class="text-center">Resumen De Reserva :3</h1>
+  <h1 class="text-center">Resumen de reserva </h1>
   <h4>Datos de Usuario:</h4>
-    <form method="post" id="add_create" name="add_create" action="<?= site_url('/RegistroComensalCrud/agregar02Continuar') ?>">
+    <form method="post" id="add_create" name="add_create" action="<?= site_url('/mesaRestaurante-agregarReserva') ?>">
     <input type= "hidden" name= "ComensalId" value = "<?= $_SESSION['USR_C']->id_comensal?>"/>
     <input type= "hidden" name= "RestauranteId" value = "<?= $_SESSION['restaurante']->id_restaurante?>"/>
     <input type= "hidden" name= "MesaId" value = "<?= $_SESSION['mesa']->mesa?>"/>
@@ -31,8 +31,24 @@
         <label>Cantidad De Personas:</label>
         <input type="text" name="cantidad" class="form-control" required/>
       </div>
+      <h4>Seleccione su menu ingresando la cantidad de platos</h4>
+      <div class="row g-2">
+       
+        <?php
+        foreach($registros as $menu) {
+          ?>
+            <div class="col-sm-10">
+            <?= $menu->menu_descripcion?>
+             </div>
+             <div class="col-sm">
+          <input type="text" name="menu[<?= $menu->menu_id ?>]" size="3" value="0" class="form-control" />
+          </div>
+          <?php
+          } 
+          ?>
+          </div>
       <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-sm">REGISTRAR</button>
+      <button type="submit" class="btn btn-primary btn-sm">RESERVAR</button>
       <a href="<?php echo site_url('/registro-cancelar/');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
     </form>
