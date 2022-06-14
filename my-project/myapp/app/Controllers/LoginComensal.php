@@ -162,16 +162,22 @@ class LoginComensal extends BaseController
             // Obtenemos la clase del Model
             $mod = new ReservaMenuModel();
             $mod->save($unMenuReserva);
+
+            $menuModel = new MenuModel ();
+            $unMenu = $menuModel ->find ($menu_id);
+            $dataMenu ['menu'] = $unMenu;
+            $dataMenu ['menuReserva'] = $unMenuReserva;
+            $data ['registros'] [] = $dataMenu;
+
         }
 
         }
         $modeloHoras = new DisponibilidadHoraModel();
         $unaHora = $modeloHoras ->find($this->request->getVar('HoraId'));
         $unaHora -> reservada= "1";
-        var_dump ($unaHora);
         $modeloHoras -> actualizar ($unaHora);
 
-        return view('loginComensal/reservaLista');
+        return view('loginComensal/reservaLista', $data);
        
     }
 
