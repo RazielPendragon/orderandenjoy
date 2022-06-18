@@ -3,13 +3,15 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/mesaRestaurante-lista/') ?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/mesaRestaurante-listaDias/').$mesa_id?>" class="btn btn-success mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
         <a href="<?php echo site_url('/mesaRestaurante-agregarHoras/'.$disponibilidad_id) ?>" class="btn btn-success mb-2">Agregar Horas</a>
 	</div>
   
 <div class="mt-3">
+<?php echo $dia ?><BR/>
+
      <table class="table table-bordered" id="users-list">
        <thead>
           <tr>

@@ -192,12 +192,27 @@ class MesaRestauranteController extends Controller
         return view('MesaRestaurante/agregarHoras',$data);
 
     } 
-    public function listaHoras($unId){
+    public function listaHoras($idDiaMesa){
         session_start();
         $mod = new DisponibilidadHoraModel();
         // Buscamos las mesas
-        $mesas = $mod->todos($unId);
-        $data['disponibilidad_id'] = $unId;
+        $mesas = $mod->todos($idDiaMesa);
+
+
+
+        //
+        $unMesa = new DisponibilidadMesaEntity();        
+
+        $modDisponibilidadMesaEntity = new DisponibilidadMesaModel();
+        $unMesa = $modDisponibilidadMesaEntity->find($idDiaMesa);
+
+        $data['mesa_id'] = $unMesa->mesa_id;
+        $data['dia'] = $unMesa->dia_reserva;
+
+
+
+        $data['disponibilidad_id'] = $idDiaMesa;
+
         // o todEs (?)
         // UN EJEMPLO PARA MAS  ADELANTE
         //$mesa = $mod->soloConA();
