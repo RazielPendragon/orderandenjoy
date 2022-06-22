@@ -3,22 +3,15 @@
 <?= $this->section('contenido') ?>
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
-       <h1> Elige tu mesa favorita</h1>
-       <tbody>
-         <ul>
-		   <?php
-          if (($registros)){
-          foreach ($registros as $registro){
-            ?>
-            <li><a href="<?php echo site_url('/mesaRestaurante-diasVer/'.$registro->mesa)?>">Mesa <?= $registro->nombre_mesa ?></a> (Capacidad <?= $registro->capacidad_mesa ?> personas)</li>
-            <?php
-          }
-        }
-        else
-        echo 'no hay mesas disponibles'
-       ?>
-       </ul>
-       </tbody>
+       <h1>Ingresa la cantidad de personas</h1>
+       <div class="form-group">
+       <div class="col-sm-10">
+       Cantidad De Personas:
+       </div>
+       <div class="col-sm">
+        <input type="text" name="cantidad" class="form-control" required/>
+      </div>
+      </div>
      </table>
   </div>
 <div>
