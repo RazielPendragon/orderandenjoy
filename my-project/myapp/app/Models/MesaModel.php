@@ -32,6 +32,7 @@ class MesaModel extends Model
     public function todos($id){
         return $this->where('restaurantes_id',$id)->orderBy('n_mesa', 'DESC')->findAll(); 
     }
+
     public function soloConA(){
         $b = $this->builder();
         $b->like('n_mesa','A'); // esto es concierto_nombre like '%A%'
@@ -40,5 +41,8 @@ class MesaModel extends Model
         return $consulta->getCustomResultObject('App\Entities\MesaEntity');
     }
 
+    public function buscarMesas($cantidad_persona, $id_restaurante){
+        return $this->where('restaurantes_id',$id_restaurante)->return $this->where('capacidad_mesa >=', $cantidad_persona)->findAll();
+    }
 }
 

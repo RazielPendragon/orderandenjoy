@@ -8,7 +8,7 @@
 		   <?php
           foreach ($registros as $restaurante){
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-mesaVer/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
+            Restaurante: <?= $restaurante->NombreFantasia?> <li> <a href="<?php echo site_url('/mesaRestaurante-cantidadPersonas/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
 
             <?php
               

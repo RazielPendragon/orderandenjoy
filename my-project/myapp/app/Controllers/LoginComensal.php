@@ -100,16 +100,31 @@ class LoginComensal extends BaseController
         $data ['registros'] = $mesas;
         return view('loginComensal/mesaVer',$data);
     }
-    public function diasVer($mesa){
+    public function cantidadPersonas($id_restaurante){
+            session_start();
+            $modeloRestaurante = new UsuarioRestauranteModel();
+            $unRestaurante = $modeloRestaurante ->find($id_restaurante);
+             $_SESSION['restaurante'] = $unRestaurante;
+             return view('loginComensal/cantidadFormulario');
+        }
+    public function diasVer($cantidad_persona){
         //guardamos seleccion de mesa
         session_start();
+        $id_restaurante =  $_SESSION['restaurante'] -> id_restaurante;
         $modeloMesa = new MesaModel();
-        $unaMesa = $modeloMesa ->find($mesa);
-        $_SESSION['mesa'] = $unaMesa;
-        // Obtenemos la clase del Model que controla los Restaurantes Y los menus
-        $modeloDias = new DisponibilidadMesaModel(); //modelo de los Días
-        $dias = $modeloDias -> todEs ($mesa);
-        $data ['registros'] = $dias;
+        $modeloDias = new DisponibilidadMesaModel();
+        $MesasTotales = $modeloMesa ->buscarMesas($cantidad_persona, $id_restaurante); //se obtienen las mesas disponibles con la capacidad solicitada por el comensal
+        $diasDisponibles = array();
+        foreach($MesasTotales as $unaMesa)
+        {
+            $dias = $modeloDias -> todEs ($unaMesa ->mesa); //se obtienen los dias disponibles para la mesa encontrada
+            foreach ($dias as $dia)
+            {
+                $diasDisponibles [$dia-> dia_reserva] [] = $unaMesa;  //se guarda la mesa disponible asocida al dia encontrado     
+            }
+        }
+        
+        $data ['registros'] = $diasDisponibles;
         return view('loginComensal/diasVer',$data);
     }
     public function horasVer($disponibilidad_id){
