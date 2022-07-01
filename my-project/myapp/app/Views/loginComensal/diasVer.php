@@ -8,9 +8,9 @@
          <ul>
 		   <?php
           if (($registros)){
-          foreach ($registros as $registro){
+          foreach ($registros as $fecha => $registro){
             ?>
-            <li><a href="<?php echo site_url('/mesaRestaurante-horasVer/'.$registro->disponibilidad_id)?>">Dias <?= $registro->dia_reserva ?></a> </li>
+            <li><a href="<?php echo site_url('/mesaRestaurante-horasVer/'.$registro[0])?>"><?= $fecha . ' (' . count($registro) . ')'?></a> </li>
             <?php
           }
         } 

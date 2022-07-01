@@ -2,7 +2,7 @@
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
 <div class="mt-3">
-<form method="post" id="add_create" name="add_create" action="<?= site_url('Comensal-Validar/') ?>">
+<form method="post" id="add_create" name="add_create" action="<?= site_url('mesaRestaurante-diasVer') ?>">
      <table class="table table-bordered" id="users-list">
        <h1>Ingresa la cantidad de personas</h1>
        <div class="form-group">

@@ -42,7 +42,7 @@ class MesaModel extends Model
     }
 
     public function buscarMesas($cantidad_persona, $id_restaurante){
-        return $this->where('restaurantes_id',$id_restaurante)->return $this->where('capacidad_mesa >=', $cantidad_persona)->findAll();
+        return $this->where('restaurantes_id',$id_restaurante)->where('capacidad_mesa >=', $cantidad_persona)->findAll();
     }
 }
 

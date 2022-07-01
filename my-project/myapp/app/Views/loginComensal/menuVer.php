@@ -29,7 +29,7 @@
       </div>
       <div class="form-group">
         <label>Cantidad De Personas:</label>
-        <input type="text" name="cantidad" class="form-control" required/>
+        <input type="text" name="cantidad" value = "<?= $_SESSION['cantidad']?>" class="form-control" readonly/>
       </div>
       <h4>Seleccione su menu ingresando la cantidad de platos</h4>
       <div class="row g-2">
