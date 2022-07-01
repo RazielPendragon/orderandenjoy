@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<!--img src="/Users/nicolesepulveda/Downloads/comida.jpg" class="img-fluid"-->
+  
 <script
   src="https://code.jquery.com/jquery-3.6.0.slim.js"
   integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
@@ -28,7 +28,6 @@
     ?>
     <p>
         <b><?php echo $comensal->NombreCompleto?></b>
-        <a href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
     </p>
     <?php }else{ 
           if(isset($_SESSION['USR_R'])){
@@ -36,22 +35,19 @@
     ?>
             <p>
             <b><?php echo $restaurant->nombre_completo?></b>
-            <a href="<?php echo site_url('/login-logout/')?>">LogOut</a>
-
+  
             </p>
             <?php
 
           }else{
       
     ?>
-    <p>
-        <a href="<?php echo site_url('/Comensal-Login/')?>">LogIn Comensal</a>
-    </p>
+   
     <?php }} ?>
 
 </div>
 
-<div class="container mt-4">
+<!--div class="container mt-4"-->
 
     <?php
      if(isset($_SESSION['msg'])){
@@ -60,7 +56,7 @@
      ?>
         <?= $this->renderSection('contenido') ?>
 
-</div>
+<!--/div-->
 
 <div class="d-flex justify-content-center">
   <?php if(!isset($_SESSION['USR_C']) && !isset($_SESSION['USR_R'])) {?>
