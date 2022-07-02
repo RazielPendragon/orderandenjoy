@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/style.css">
+  
 </head>
 <body>
   
@@ -25,26 +26,26 @@
     <?php if(isset($_SESSION['USR_C'])) {
       
       $comensal =   $_SESSION['USR_C'];
-    ?>
-    <p>
+       ?>
+       <p>
         <b><?php echo $comensal->NombreCompleto?></b>
-    </p>
-    <?php }else{ 
-          if(isset($_SESSION['USR_R'])){
-            $restaurant = $_SESSION['USR_R'];
-    ?>
-            <p>
-            <b><?php echo $restaurant->nombre_completo?></b>
-  
-            </p>
-            <?php
-
-          }else{
-      
-    ?>
-   
-    <?php }} ?>
-
+       </p>
+       <?php 
+    }
+    else{ 
+      if(isset($_SESSION['USR_R'])){
+        $restaurant = $_SESSION['USR_R'];
+        ?>
+        <p>
+          <b><?php echo $restaurant->nombre_completo?></b>
+        </p>
+        <?php
+      }
+      else{
+        ?>
+        <?php 
+      }
+    }?>
 </div>
 
 <!--div class="container mt-4"-->
@@ -59,12 +60,6 @@
 <!--/div-->
 
 <div class="d-flex justify-content-center">
-  <?php if(!isset($_SESSION['USR_C']) && !isset($_SESSION['USR_R'])) {?>
-  <a href="<?php echo site_url('/Restaurante-Login/')?>">LogIn Restaurante</a>
-<?php } ?>  
-</div>
-<div class="d-flex justify-content-center">
-
 <a href="<?php echo site_url('/Contacto-Registro/')?>">Contactanos</a> <!-- que nos lleve a contactoFormulario-->
 </div>
 </body>

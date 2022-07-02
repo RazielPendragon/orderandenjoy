@@ -1,4 +1,3 @@
-
 <?= $this->extend('formaStandar') ?>
 
 <?= $this->section('contenido') ?>
