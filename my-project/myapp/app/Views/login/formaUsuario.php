@@ -8,9 +8,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/style.css">
-  
+
 </head>
-<body>
+<body  style="background-image: url('/imagenes/fonndo.jpg');">
+
   
 <script
   src="https://code.jquery.com/jquery-3.6.0.slim.js"
@@ -29,6 +30,7 @@
        ?>
        <p>
         <b><?php echo $comensal->NombreCompleto?></b>
+        <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
        </p>
        <?php 
     }
@@ -59,8 +61,6 @@
 
 <!--/div-->
 
-<div class="d-flex justify-content-center">
-<a href="<?php echo site_url('/Contacto-Registro/')?>">Contactanos</a> <!-- que nos lleve a contactoFormulario-->
-</div>
+
 </body>
 </html>

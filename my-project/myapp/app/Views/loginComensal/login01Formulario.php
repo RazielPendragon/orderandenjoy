@@ -1,6 +1,6 @@
-<?= $this->extend('/login/formausuario') ?>
+<?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
-<img src="/imagenes/fonndo.jpg" class="img-fluid" alt="Responsive image">
+
 <div class="mt-3"> 
 
   <div class="container mt-5 offset-md-3 col-6" >
@@ -19,8 +19,8 @@
         <a href="<?php echo site_url('###');?>" class="btn btn-secondary btn-sm">Cancelar</a>
       </div>
       <ul>
-      <li> <a href="<?php echo site_url('/Comensal-Registro/')?>">¿No tienes una cuenta? Registrate!!!</a></li>
+      <li> <a href="<?php echo site_url('/Comensal-Registro/')?>">¿No tienes una cuenta? Registrate!</a></li>
       </ul>
-  </div>
-
+    </div>
+</div>
   <?= $this->endSection() ?>

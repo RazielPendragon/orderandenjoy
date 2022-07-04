@@ -26,28 +26,21 @@
       <?php if(isset($_SESSION['USR_C'])) {
       
       $comensal =   $_SESSION['USR_C'];
-    ?>
-
-         <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
-    
-    <?php }else{ 
+      ?>
+      <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
+      <?php }else{ 
           if(isset($_SESSION['USR_R'])){
             $restaurant = $_SESSION['USR_R'];
-    ?>
+             ?>
            
 
             <a class="nav-link" href="<?php echo site_url('/login-logout/')?>">LogOut</a>
-
-          
             <?php
-
           }else{
-      
-    ?>
+            ?>
   
         <a class="nav-link" href="<?php echo site_url('/Comensal-Login/')?>">ACCEDER COMENSAL</a>
-
-    <?php }} ?>
+      <?php }} ?>
       </li>
     </ul>
   </div>
@@ -55,6 +48,9 @@
 <img src="/imagenes/estasii.jpg"/>
 <div>
 LANDING PAGE AAAAAAAAAAAA
+<div class="d-flex justify-content-center">
+<a href="<?php echo site_url('/Contacto-Registro/')?>">Contactanos</a> <!-- que nos lleve a contactoFormulario-->
+</div>
 	
  <img src="/images/icono reloj.png" alt="">
 	<div class="video-container">

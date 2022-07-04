@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?= $this->extend('formaStandar') ?>
+<?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
 
   <div class="container mt-5">

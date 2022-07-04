@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
-<div class="mt-3">
+<div class="container mt-5">
      <table class="table table-bordered" id="users-list">
        <h1> Elige horario</h1>
        <tbody>
@@ -20,7 +20,7 @@
        </ul>
        </tbody>
      </table>
-     <div class="row">
+<!--    <div class="row">
 				<div class="col-md-12">
 					<div class="calendar calendar-first" id="calendar_first">
 				    <div class="calendar_header">
@@ -37,7 +37,7 @@
   <script src="/js/popper.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/main.js"></script>
-
+-->
   </div>
 <div>
 </ul>
