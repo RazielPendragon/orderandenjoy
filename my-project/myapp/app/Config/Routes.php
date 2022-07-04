@@ -150,6 +150,7 @@ $routes->add('Restaurante-Validar', 'LoginRestauranteController::loginValidarRes
 $routes->add('Restaurante-logout', 'LoginRestauranteController::logoutRestaurante');
 $routes->add('mesaRestaurante-reservar/(:num)', 'LoginComensal::mesaReservar/$1');
 
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

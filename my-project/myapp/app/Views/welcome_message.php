@@ -2,7 +2,7 @@
 <?= $this->section('contenido') ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
-  <img src="/imagenes/logo.png" width="300" height="65" class="d-inline-block align-top" alt=""/>
+  <img src="/imagenes/eslogan.png" width="300" height="65" class="d-inline-block align-top" alt=""/>
 
   </a>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -13,11 +13,12 @@
       <!-- hacer sobre nosotros -->
       <li class="nav-item">
         <a class="nav-link" href="#">SOBRE NOSOTROS</a>
+        
       </li>
       <li class="nav-item">
       <div class="d-flex justify-content-center">
         <?php if(!isset($_SESSION['USR_C']) && !isset($_SESSION['USR_R'])) {?>
-          <a class="nav-link" href="<?php echo site_url('/Restaurante-Login/')?>">ENTRAR RESTAURANTE</a>
+          <a class="nav-link" href="<?php echo site_url('/Restaurante-Login/')?>">ACCEDER RESTAURANTE</a>
           <?php } ?>  
       </div>
       </li>
@@ -44,14 +45,14 @@
       
     ?>
   
-        <a class="nav-link" href="<?php echo site_url('/Comensal-Login/')?>">ENTRAR COMENSAL</a>
+        <a class="nav-link" href="<?php echo site_url('/Comensal-Login/')?>">ACCEDER COMENSAL</a>
 
     <?php }} ?>
       </li>
     </ul>
   </div>
 </nav>
-<img src="/imagenes/index.jpg"/>
+<img src="/imagenes/estasii.jpg"/>
 <div>
 LANDING PAGE AAAAAAAAAAAA
 	
