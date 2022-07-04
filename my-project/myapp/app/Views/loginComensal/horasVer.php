@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
-<div class="mt-3">
+<div class="container mt-1 offset-md-3 col-6">
      <table class="table table-bordered" id="users-list">
        <h1> Elige horario</h1>
        <tbody>

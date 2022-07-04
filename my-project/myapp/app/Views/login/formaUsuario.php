@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/css/style.css">
 
 </head>
-<body  style="background-image: url('/imagenes/fonndo.jpg');">
+<body  style="background-image: url('/imagenes/fondo.jpg');">
 
   
 <script

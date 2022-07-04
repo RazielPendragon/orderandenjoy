@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
-<div class="container mt-5">
+<div class="container mt-1 offset-md-3 col-6">
      <table class="table table-bordered" id="users-list">
        <tbody>
        <h1>Encuentra tu Restaurante Preferido</h1>
