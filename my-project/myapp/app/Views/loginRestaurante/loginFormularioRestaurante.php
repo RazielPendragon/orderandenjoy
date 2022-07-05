@@ -6,7 +6,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <div class="mt-3">
  
-  <div class="container mt-5">
+  <div class="container mt-1 offset-md-3 col-6">
   <h1>Bienvenido Restaurante</h1>
     <form method="post" id="add_create" name="add_create" action="<?= site_url('Restaurante-Validar/') ?>">
       <div class="form-group">

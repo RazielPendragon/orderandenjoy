@@ -27,14 +27,14 @@
       
       $comensal =   $_SESSION['USR_C'];
       ?>
-      <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
+      <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">Cerrar sesion</a>
       <?php }else{ 
           if(isset($_SESSION['USR_R'])){
             $restaurant = $_SESSION['USR_R'];
              ?>
            
 
-            <a class="nav-link" href="<?php echo site_url('/login-logout/')?>">LogOut</a>
+            <a class="nav-link" href="<?php echo site_url('/login-logout/')?>">Cerrar sesion</a>
             <?php
           }else{
             ?>
@@ -47,9 +47,10 @@
 </nav>
 <img src="/imagenes/estasii.jpg"/>
 <div>
-LANDING PAGE AAAAAAAAAAAA
+
 <div class="d-flex justify-content-center">
-<a href="<?php echo site_url('/Contacto-Registro/')?>">Contactanos</a> <!-- que nos lleve a contactoFormulario-->
+Si eres un restaurante 
+<a href="<?php echo site_url('/Contacto-Registro/')?>">contactanos</a> <!-- que nos lleve a contactoFormulario-->
 </div>
 	
  <img src="/images/icono reloj.png" alt="">

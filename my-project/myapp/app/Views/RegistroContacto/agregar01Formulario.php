@@ -1,8 +1,8 @@
-<?= $this->extend('formaStandar') ?>
+<?= $this->extend('/login/formaUsuario') ?>
 
 <?= $this->section('contenido') ?>
 
-  <div class="container mt-5">
+  <div class="container mt-1 offset-md-3 col-6">
   <h1 class="text-center">¡Dejanos tus datos y te contactaremos!</h1>
   <h4>Datos del Restaurante:</h4>
     <form method="post" id="add_create" name="add_create" action="<?= site_url('/RegistroContactoCrud/agregar02Continuar') ?>">

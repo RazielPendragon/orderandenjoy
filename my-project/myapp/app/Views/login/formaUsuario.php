@@ -30,7 +30,7 @@
        ?>
        <p>
         <b><?php echo $comensal->NombreCompleto?></b>
-        <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">LogOut</a>
+        <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">Cerrar sesion</a>
        </p>
        <?php 
     }
