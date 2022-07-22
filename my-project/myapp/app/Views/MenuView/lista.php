@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 <?= $this->extend('formaStandar') ?>
-<?= $this->extend('/loginRestaurante/formausuario') ?>
 <?= $this->section('contenido') ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -8,10 +7,10 @@
 
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/menu-volver/')?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/menu-volver/')?>" class="btn btn-info mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
-        <a href="<?php echo site_url('/menu-agregar') ?>" class="btn btn-success mb-2">Agegar Menú</a>
+        <a href="<?php echo site_url('/menu-agregar') ?>" class="btn btn-info mb-2">Agegar Menú</a>
 	</div>
 <div class="mt-3">
      <table class="table table-bordered" id="users-list">
@@ -45,8 +44,8 @@
              <td><?php echo $reg->precio; ?></td>
              <td>
               <a href="<?php echo site_url('/menu-ver/'.$reg->id);?>" class="btn btn-info btn-sm">Ver</a>
-              <a href="<?php echo site_url('/menu-editar/'.$reg->id);?>" class="btn btn-primary btn-sm">Editar</a>
-              <a href="<?php echo site_url('/menu-eliminar/'.$reg->id);?>" class="btn btn-danger btn-sm">Borrar</a>
+              <a href="<?php echo site_url('/menu-editar/'.$reg->id);?>" class="btn btn-info btn-sm">Editar</a>
+              <a href="<?php echo site_url('/menu-eliminar/'.$reg->id);?>" class="btn btn-info btn-sm">Borrar</a>
               </td>
           </tr>
          <?php endforeach; ?>

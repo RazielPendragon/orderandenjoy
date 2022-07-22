@@ -4,10 +4,10 @@
 <?= $this->section('contenido') ?>
 
 <div class="d-flex">
-        <a href="<?php echo site_url('/reservas-volver/') ?>" class="btn btn-success mb-2">Volver</a>
+        <a href="<?php echo site_url('/reservas-volver/') ?>" class="btn btn-primary mb-2">Volver</a>
 	</div>
 <div class="d-flex justify-content-end">
-        <a href="<?php echo site_url('/mesaRestaurante-agregarFormulario/') ?>" class="btn btn-success mb-2">Agregar mesa</a>
+        <a href="<?php echo site_url('/mesaRestaurante-agregarFormulario/') ?>" class="btn btn-primary mb-2">Agregar mesa</a>
 	</div>
   
 <div class="mt-3">
