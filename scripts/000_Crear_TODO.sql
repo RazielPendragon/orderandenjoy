@@ -69,11 +69,12 @@ CREATE TABLE `MenuReserva`(
 
 /* Table 'DisponibilidadHora' */
 CREATE TABLE `DisponibilidadHora`(
-  hora_id INT(11) NOT NULL AUTO_INCREMENT,
+  hora_id INT(11) NOT NULL,
   hora TIME NOT NULL,
   disponibilidad_id INT(11) NOT NULL,
-  PRIMARY KEY (hora_id)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+  reservada int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY(hora_id)
+);
 
 CREATE TABLE `UsuarioContacto` (
 usuario_contacto_id int(11) NOT NULL AUTO_INCREMENT,

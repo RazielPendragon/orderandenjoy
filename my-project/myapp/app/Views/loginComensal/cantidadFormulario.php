@@ -2,6 +2,9 @@
 <?= $this->extend('/login/formaUsuario') ?>
 <?= $this->section('contenido') ?>
 <div class="container mt-1 offset-md-3 col-6">
+<?= view('/loginComensal/menuPrincipal') ?>
+</div>
+<div class="container mt-1 offset-md-3 col-6">
 
 <form method="post" id="add_create" name="add_create" action="<?= site_url('mesaRestaurante-diasVer') ?>">
      <table class="table table-bordered" id="users-list">

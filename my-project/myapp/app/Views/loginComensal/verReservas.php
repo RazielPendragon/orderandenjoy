@@ -6,19 +6,26 @@
 </div>
 <div class="container mt-1 offset-md-3 col-6">
      <table class="table table-bordered" id="users-list">
+       <h1> Mis Reservas</h1>
        <tbody>
-       <h1>Encuentra tu Restaurante Preferido</h1>
+         <ul>
 		   <?php
-          foreach ($registros as $restaurante){
+          if (($registros)){
+          foreach ($registros as $registro){
             ?>
-            Restaurante: <?= $restaurante->NombreFantasia?>,<?= $restaurante->RestauranteDireccion?> <li> <a href="<?php echo site_url('/mesaRestaurante-cantidadPersonas/'.$restaurante->id_restaurante)?>">Reserva aqui</a></li><br/> 
-<!--RestauranteDireccion -->
+            <li> <?= $registro -> reserva_id ?></li>
             <?php
-              
-            
           }
+        } 
+        else
+            echo 'No tienes ninguna reserva'
 		   ?>
+       </ul>
        </tbody>
      </table>
   </div>
+<div>
+</ul>
+
+</div>
 <?= $this->endSection() ?>

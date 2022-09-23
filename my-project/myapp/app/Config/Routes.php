@@ -116,6 +116,7 @@ $routes->add('mesaRestaurante-menuVer/(:num)', 'LoginComensal::menuVer/$1');
 
 $routes->post('mesaRestaurante-agregarReserva', 'LoginComensal::agregarReserva');
 $routes->add('mesaRestaurante-reservaLista', 'LoginComensal::reservaLista');
+$routes->add('Comensal-verReservas', 'LoginComensal::verReservas');
 
 /*
  * --------------------------------------------------------------------

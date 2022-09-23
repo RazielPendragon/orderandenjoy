@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/style.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body  style="background-image: url('/imagenes/fondo.jpg');">
 
@@ -26,13 +26,6 @@
 <div class="d-flex justify-content-end">
     <?php if(isset($_SESSION['USR_C'])) {
       
-      $comensal =   $_SESSION['USR_C'];
-       ?>
-       <p>
-        <b><?php echo $comensal->NombreCompleto?></b>
-        <a class="nav-link" href="<?php echo site_url('/Comensal-logout/')?>">Cerrar sesion</a>
-       </p>
-       <?php 
     }
     else{ 
       if(isset($_SESSION['USR_R'])){

@@ -200,6 +200,12 @@ class LoginComensal extends BaseController
        
     }
 
-
-
+    public function verReservas(){
+        session_start();
+        $usuario = $_SESSION['USR_C']->usuario_comensal_id;
+        $reservasModel = new reservaMesaModel();
+        $reservas = $reservasModel -> todos($usuario);
+        $data['registros'] = $reservas;
+        return view('loginComensal/verReservas', $data);
+    }
 }
